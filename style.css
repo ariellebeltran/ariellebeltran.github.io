@@ -3,13 +3,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&display=swap');
 
+.dropBttn {
+    padding: 0px 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:16px;
+}
+
+.dropBttn:hover, .dropBttn:focus {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+}
+
+.dropdown-menu{
+    /* float: right; */
+    position: sticky;
+    display: inline-block;
+    /* padding-right: 50px; padding-left: 50px; */
+    /* padding-top:25px; padding-bottom: 25px; */
+}
+
+.dropdown-content{
+    /* float: right; */
+    display: none;
+    position: sticky;
+    background-color: rgb(239, 239, 239);
+    min-width: 100px;
+    /* max-width: 50px; */
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a{ 
+    text-align: right;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: brown;
+    color:white;
+}
+
+.show {
+    display:block
+}
+
 nav, a:visited {
     text-align: right;
     position: sticky;
     top:0;
-    overflow: hidden;
-    /* padding-right: 50px; padding-left: 50px; */
-    padding-top:25px; padding-bottom: 25px;
+    overflow:visible;
+    padding: 25px 0px;
     background-color: white;
     color: black;
     font-family: "Antonio", sans-serif;
@@ -18,7 +74,10 @@ nav, a:visited {
     font-style: normal;
 
     a {
-        padding-right: 15px;
+        padding: 0px 10px;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     a:hover{ /*Thicker font*/

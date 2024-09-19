@@ -22,14 +22,28 @@ A link to your GitHub profile or any other relevant portfolios. -->
         <!-- <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         </style> -->
+    </head>
 
-        <body>
+    <body>
+        
         <script src="main.js"></script>
         <nav>
-            <a href="#home">Home</a>
+            <!-- <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contact</a> -->
+
+            <div class="dropdown-menu">
+                <button onclick ="myFunction()" class="dropBttn">About Me</button>
+                <div id="aDropdown" class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <a>|</a>
+            <a href="#">Visualizations</a>
         </nav>
 
         <h3 id="home">Home</h3>
@@ -76,6 +90,5 @@ A link to your GitHub profile or any other relevant portfolios. -->
             
             Mauris eu sapien sed leo interdum auctor. Praesent fringilla hendrerit velit sed suscipit. Cras nisi arcu, iaculis ut placerat accumsan, gravida quis sem. Aliquam vulputate dui sapien, id vulputate massa suscipit et. Curabitur congue condimentum tincidunt. Quisque ac purus justo. Pellentesque iaculis pharetra ipsum vel accumsan. Donec vitae tempor ante. Nunc nunc risus, vestibulum sit amet vestibulum nec, elementum sed neque. Aenean mollis massa id enim scelerisque, non pellentesque risus tempor. Vestibulum lobortis vulputate quam, non pretium dolor maximus eu. Etiam mi felis, vestibulum quis purus sed, iaculis blandit ligula. Aenean tempor finibus posuere.</p>
 
-        </body>
-    </head>
+    </body>
 </html>
