@@ -1,0 +1,20 @@
+nav, a:visited {
+    text-align: right;
+    position: sticky;
+    padding: 50px;
+    background-color: black;
+    color: white;
+    a {
+        padding-right: 15px;
+    }
+
+    a:hover{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
