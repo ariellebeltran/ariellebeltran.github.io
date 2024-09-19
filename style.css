@@ -1,9 +1,12 @@
 nav, a:visited {
     text-align: right;
     position: sticky;
-    padding: 50px;
-    background-color: black;
-    color: white;
+    top:0;
+    overflow: hidden;
+    padding-right: 50px; padding-left: 50px;
+    padding-top:25px; padding-bottom: 25px;
+    background-color: white;
+    color: black;
     a {
         padding-right: 15px;
     }
@@ -16,5 +19,13 @@ nav, a:visited {
 
 a {
     text-decoration: none;
+}
+
+p{
+    .barlow-condensed-regular {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
 }
 
