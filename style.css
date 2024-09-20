@@ -35,7 +35,7 @@
 .dropdown-content{
     /* float: right; */
     display: none;
-    position: sticky;
+    position: absolute;
     background-color: rgb(239, 239, 239);
     min-width: 100px;
     /* max-width: 50px; */
@@ -60,7 +60,7 @@
     display:block
 }
 
-nav, a:visited {
+nav {
     text-align: right;
     position: sticky;
     top:0;
@@ -72,7 +72,7 @@ nav, a:visited {
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
-
+    position: relative;
     a {
         padding: 0px 10px;
         font-family: "Barlow Semi Condensed", sans-serif;
@@ -89,8 +89,9 @@ nav, a:visited {
     }
 }
 
-a {
+a, a:visited {
     text-decoration: none;
+    color:black;
 }
 
 h3 {
