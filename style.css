@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Antonio:wght@100..700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .dropBttn {
     padding: 0px 20px;
@@ -94,6 +95,22 @@ nav {
 a, a:visited {
     text-decoration: none;
     color:black;
+}
+
+h1{
+    font-family: "Anton SC", sans-serif;
+    font-weight: 00;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.landing-page{
+    text-align: center;
+    padding:100px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/030/762/667/large_2x/abstract-background-of-waves-and-mountains-data-technology-futuristic-illustration-generative-ai-free-photo.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: white;
 }
 
 h2 {
