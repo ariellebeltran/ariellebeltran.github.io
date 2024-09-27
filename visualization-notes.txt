@@ -15,3 +15,30 @@
     </svg>
   </body>
 </html>
+
+<svg width="1200px" height="500px">
+<!-- <circle cx="250" cy="250" r="100" fill="green"/> -->
+<rect x="0" y="70" width="40" height="80" fill="blue"/>
+<text x="20tr" y="140" fill="white" font-family="Barlow Semi Condensed, sans-serif" text-anchor="middle">25</text>
+
+<rect x="50" y="50" width="40" height="100" fill="blue" />
+<text x="70" y="170" font-family="Verdana" font-size="12" fill="black" text-anchor="middle">50</text>
+
+<rect x="120" y="70" width="40" height="80" fill="green" />
+<text x="140" y="170" font-family="Verdana" font-size="12" fill="black" text-anchor="middle">40</text>
+
+
+<rect x="190" y="30" width="40" height="120" fill="red" />
+<text x="210" y="170" font-family="Verdana" font-size="12" fill="black" text-anchor="middle">60</text>
+
+
+<rect x="260" y="90" width="40" height="60" fill="orange" />
+<text x="280" y="170" font-family="Verdana" font-size="12" fill="black" text-anchor="middle">30</text>
+
+
+<text x="70" y="190" font-family="Barlow Semi Condensed" font-size="14" fill="black" text-anchor="middle">A</text>
+<text x="140" y="190" font-family="Barlow Semi Condensed" font-size="14" fill="black" text-anchor="middle">B</text>
+<text x="210" y="190" font-family="Barlow Semi Condensed" font-size="14" fill="black" text-anchor="middle">C</text>
+<text x="280" y="190" font-family="Barlow Semi Condensed" font-size="14" fill="black" text-anchor="middle">D</text>
+
+</svg>
