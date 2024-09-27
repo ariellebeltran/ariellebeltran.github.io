@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+  </head>
+  <body>
+    <!-- access to shapes -->
+    <svg width="500px" height="500px">
+        <circle cx="250" cy="250" r="100" fill="green"/>
+        
+        <rect x="0" y="70" width="40" height="80" fill="blue"/>
+        <text x="20tr" y="140" fill="white" font-family="Barlow Semi Condensed, sans-serif" text-anchor="middle">25</text>
+    </svg>
+  </body>
+</html>
