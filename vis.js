@@ -173,29 +173,38 @@ function createSVGVegalite(){
       })
 }
 
-async function render() {
-    // load data
-    const data = await d3.csv("./dataset/videogames_wide.csv");
-  
-    // create a bar chart
-    const vlSpec = vl
-      .markBar()
-      .data(data)
-      .encode(
-        vl.y().fieldN("Platform").sort("-x"),
-        vl.x().fieldQ("Global_Sales").aggregate("sum")
-      )
-      .width("container")
-      .height(400)
-      .toSpec();
-  
-    const view = await vegaEmbed("#view", vlSpec).view;
-    view.run();
-  }
-  
-  render();
-
-// Call the functions to create the visualizations
 createClassVisualization();
 createSVGArt();
-createSVGVegalite();
+
+
+// Create and render the bar chart
+// async function to load data from datasets/videogames_long.csv using d3.csv and then make visualizations
+async function render() {
+    try {
+        // load data
+        const data = await d3.csv("./dataset/videogames_wide.csv");
+        
+        // create Vega-Lite specification
+        const vlSpec = vl
+          .markBar()
+          .data(data)
+          .encode(
+            vl.y().fieldN("Platform").sort("-x"),
+            vl.x().fieldQ("Global_Sales").aggregate("sum")
+          )
+          .width("content")
+          .height(400)
+          .toSpec();
+
+        // Embed the visualization using Vega Embed
+        const result = await vegaEmbed("#vis3", vlSpec);
+
+        // Ensure you access the view after successful embedding
+        const view = result.view;
+        view.run();  // Optional: If additional interactions are required
+    } catch (error) {
+        console.error("Error rendering the visualization:", error);
+    }
+}
+
+render();

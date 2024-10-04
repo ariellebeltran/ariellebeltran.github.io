@@ -185,6 +185,21 @@ p, li {
     font-style: normal;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#view {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    height: 600px;
+}
+
 body{
     padding:0px 50px;
     /* padding-top: 0px; */
