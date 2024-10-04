@@ -157,6 +157,22 @@ function createSVGArt() {
     });
 }
 
+function createSVGVegalite(){
+    const svg3 = document.getElementById('vis3');
+
+    Plot.plot({
+        marks: [
+          Plot.barY(Wii, {
+            x: "Genre",
+            y: "Global_Sales",
+            fill: "#6e40aa",
+            tip: true
+          }),
+          Plot.ruleY([0])
+        ]
+      })
+}
+
 // Call the functions to create the visualizations
 createClassVisualization();
 createSVGArt();
