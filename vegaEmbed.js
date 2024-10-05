@@ -44,7 +44,10 @@ async function loadDataAndCreateChart() {
       mark: "bar",
       encoding: {
         x: { field: "Platform", type: "ordinal", title: "Platform" }, // Change field to Platform or Genre
-        y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" }
+        y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
+        tooltip: [ // Add tooltip encoding
+            { field: "Global_Sales", type: "quantitative", title: "Global Sales (Millions)" },
+        ]
       },
     };
   
@@ -75,7 +78,10 @@ async function loadDataAndCreateChart1_5() {
       mark: "bar",
       encoding: {
         x: { field: "Genre", type: "ordinal", title: "Genre" }, // Change field to Platform or Genre
-        y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" }
+        y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
+        tooltip: [ // Add tooltip encoding
+            { field: "Global_Sales", type: "quantitative", title: "Global Sales (Millions)" },
+        ]
       },
     };
   
@@ -95,6 +101,7 @@ async function loadDataAndCreateChart2() {
     const filteredData = data.map(d => ({
       Year: d.Year,
       Genre: d.Genre,
+      Platform: d.Platform,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
     }));
   
@@ -103,12 +110,15 @@ async function loadDataAndCreateChart2() {
       $schema: "https://vega.github.io/schema/vega-lite/v5.json",
       description: "Bar chart using video game sales data.",
       data: { values: filteredData }, // Use filtered data here
+      title: `Genre & Platform: All`,
       mark: "bar",
       encoding: {
         x: { field: "Year", type: "ordinal", title: "Year" }, // Change field to Platform or Genre
         y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" },
         tooltip: [ // Add tooltip encoding
           { field: "Genre", type: "nominal", title: "Genre" },
+          { field: "Platform", type: "nominal", title: "Platform" },
+            { field: "Global_Sales", type: "quantitative", format: ".2f", title: "Global Sales (Millions)" },
         ]
       },
     };
@@ -119,6 +129,41 @@ async function loadDataAndCreateChart2() {
   
   // Call the function to load data and create the chart
   loadDataAndCreateChart2();
+
+  async function loadDataAndCreateChart2_5() {
+    // Load the CSV data
+    const data = await d3.csv("./dataset/videogames_wide.csv");
+  
+    // Process the data (if needed), e.g., extract only certain categories like Platform, Genre, and Global_Sales
+    const filteredData = data.map(d => ({
+      Year: d.Year,
+      Platform: d.Platform,
+      Global_Sales: +d.Global_Sales,  // Convert sales to numbers
+    }));
+  
+    // Create the Vega-Lite specification using the filtered data
+    var yourVlSpec = {
+      $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+      description: "Bar chart using video game sales data.",
+      data: { values: filteredData }, // Use filtered data here
+      title: `Ignore This`,
+      mark: "bar",
+      encoding: {
+        x: { field: "Year", type: "ordinal", title: "Year" }, // Change field to Platform or Genre
+        y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" },
+        tooltip: [ // Add tooltip encoding
+            { field: "Platform", type: "nominal", title: "Platform" },
+            { field: "Global_Sales", type: "quantitative", format: ".2f", title: "Global Sales (Millions)" },
+        ]
+      },
+    };
+  
+    // Embed the Vega-Lite chart
+    vegaEmbed("#view4", yourVlSpec);
+  }
+  
+  // Call the function to load data and create the chart
+  loadDataAndCreateChart2_5();
 
   // Load the CSV data using d3.csv and filter it to show total sales per Genre
 async function loadDataAndCreateChart3() {
@@ -152,8 +197,10 @@ async function loadDataAndCreateChart3() {
         const yourVlSpec = {
           $schema: "https://vega.github.io/schema/vega-lite/v5.json",
           description: `Bar chart for genre: ${genre}`,
+          title: `Genre: ${genre}`,
           data: { values: genreData }, // Use filtered data here
           mark: "bar",
+          width: 550,
           encoding: {
             x: { field: "Year", type: "ordinal", title: "Year" },
             y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
@@ -172,6 +219,59 @@ async function loadDataAndCreateChart3() {
   // Call the function to load data and create the chart
 loadDataAndCreateChart3();
 
+async function loadDataAndCreateChart4() {
+    // Load the CSV data
+    const data = await d3.csv("./dataset/videogames_wide.csv");
+  
+    // Process the data (if needed), e.g., extract only certain categories like Platform, Genre, and Global_Sales
+    const filteredData = data.map(d => ({
+        Year: d.Year,
+        Genre: d.Genre,
+        Platform: d.Platform,
+        Global_Sales: +d.Global_Sales,  // Convert sales to numbers
+      }));
+    
+      const platforms = [...new Set(filteredData.map(d => d.Platform))];
+
+      //make divs for each genre, but w/o having to type them all out
+      const container = document.getElementById('platformContainer');
+      platforms.forEach(platform=> {
+        const div = document.createElement("div");
+        div.id = `view45-${platform.replace(/\s/g, '-')}`; //sets id for div
+        container.appendChild(div); //appends new div to container
+      });
+
+      platforms.forEach(platform => {
+        // Filter data for each genre
+
+        const platformData = filteredData.filter(d => d.Platform === platform);
+        
+        // Create a Vega-Lite specification using the filtered data for this genre
+        const yourVlSpec = {
+          $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+          description: `Bar chart for platform: ${platform}`,
+          title: `Platform: ${platform}`,
+          data: { values: platformData }, // Use filtered data here
+          mark: "bar",
+          width: 550,
+          encoding: {
+            x: { field: "Year", type: "ordinal", title: "Year" },
+            y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
+            tooltip: [
+              { field: "Global_Sales", type: "nominal", title: "Global Sales" },
+            ]
+          },
+        };
+    
+      // Embed the Vega-Lite chart
+      console.log(yourVlSpec); 
+      vegaEmbed(`#view45-${platform.replace(/\s/g, '-')}`, yourVlSpec);
+  });
+}
+  
+  // Call the function to load data and create the chart
+loadDataAndCreateChart4();
+
 async function loadDataAndCreateChartNA() {
     // Load the CSV data
     const data = await d3.csv("./dataset/videogames_wide.csv");
@@ -189,7 +289,7 @@ async function loadDataAndCreateChartNA() {
         mark: "bar",
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
-            y: { field: "NA_Sales", type: "quantitative", title: "NA Sales (in millions)" }, // y for JP Sales
+            y: { field: "NA_Sales", type: "quantitative", aggregate: "sum", title: "NA Sales (in millions)" }, // y for JP Sales
             tooltip: [ // Add tooltip encoding
                 { field: "NA_Sales", type: "quantitative", title: "NA Sales" },
             ]
@@ -220,7 +320,7 @@ async function loadDataAndCreateChartEU() {
         mark: "bar",
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
-            y: { field: "EU_Sales", type: "quantitative", title: "EU Sales (in millions)" }, // y for JP Sales
+            y: { field: "EU_Sales", type: "quantitative", aggregate: "sum", title: "EU Sales (in millions)" }, // y for JP Sales
             tooltip: [ // Add tooltip encoding
                 { field: "EU_Sales", type: "quantitative", title: "EU Sales" },
             ]
@@ -251,7 +351,7 @@ async function loadDataAndCreateChartJP() {
         mark: "bar",
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
-            y: { field: "JP_Sales", type: "quantitative", title: "JP Sales (in millions)" }, // y for JP Sales
+            y: { field: "JP_Sales", type: "quantitative", aggregate: "sum", title: "JP Sales (in millions)" }, // y for JP Sales
             tooltip: [ // Add tooltip encoding
                 { field: "JP_Sales", type: "quantitative", title: "JP Sales" },
             ]
@@ -282,7 +382,7 @@ async function loadDataAndCreateChartOther() {
         mark: "bar",
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
-            y: { field: "Other_Sales", type: "quantitative", title: "Other Sales (in millions)" }, // y for JP Sales
+            y: { field: "Other_Sales", type: "quantitative", aggregate: "sum", title: "Other Sales (in millions)" }, // y for JP Sales
             tooltip: [ // Add tooltip encoding
                 { field: "Other_Sales", type: "quantitative", title: "Other Sales" },
             ]

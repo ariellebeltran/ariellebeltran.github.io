@@ -197,14 +197,30 @@ p, li {
     overflow: hidden;
 }
 
-#view, #view2, #view3, #genreContainer, #view5, #view6, #view7, #view8 {
+#view, #view2, #view3, #view4, #view5, #view6, #view7, #view8 {
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
 }
 
-#genreContainer .chart-wrapper{
+#genreContainer, #platformContainer{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    
+    div{
+        /* width: fit-content; */
+        /* width: fit-content; */
+        /* padding:10px; */
+        /* padding-right:20px; */
+
+    }
+}
+
+#genreContainer .chart-wrapper, #platformContainer .chart-wrapper{
     padding-bottom: 20px;
+    /* max-width: 669px; */
 }
 
 body{
