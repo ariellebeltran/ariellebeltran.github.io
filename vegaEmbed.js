@@ -121,7 +121,7 @@ async function loadDataAndCreateChart2() {
   loadDataAndCreateChart2();
 
   // Load the CSV data using d3.csv and filter it to show total sales per Genre
-async function loadDataAndCreateChart2_5() {
+async function loadDataAndCreateChart3() {
     // Load the CSV data
     const data = await d3.csv("./dataset/videogames_wide.csv");
   
@@ -133,32 +133,44 @@ async function loadDataAndCreateChart2_5() {
         Global_Sales: +d.Global_Sales,  // Convert sales to numbers
       }));
     
-      // Create the Vega-Lite specification using the filtered data
-      var yourVlSpec = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Bar chart using video game sales data.",
-        data: { values: filteredData }, // Use filtered data here
-        mark: "bar",
-        encoding: {
-          x: { field: "Year", type: "ordinal", title: "Year" }, // Change field to Platform or Genre
-          y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" },
-          tooltip: [ // Add tooltip encoding
-            { field: "Genre", type: "nominal", title: "Genre" }, // Tooltip for Genre
-          ]
-          
-        },
-        facet: {
-        field: "Platform", // Facet by Platform
-        title: "Platform" // Title for the facet
-        }
-      };
-  
-    // Embed the Vega-Lite chart
-    vegaEmbed("#view4", yourVlSpec);
-  }
+      const genres = [...new Set(filteredData.map(d => d.Genre))];
+
+      //make divs for each genre, but w/o having to type them all out
+      const container = document.getElementById('genreContainer');
+      genres.forEach(genre=> {
+        const div = document.createElement("div");
+        div.id = `view4-${genre.replace(/\s/g, '-')}`; //sets id for div
+        container.appendChild(div); //appends new div to container
+      });
+
+      genres.forEach(genre => {
+        // Filter data for each genre
+
+        const genreData = filteredData.filter(d => d.Genre === genre);
+        
+        // Create a Vega-Lite specification using the filtered data for this genre
+        const yourVlSpec = {
+          $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+          description: `Bar chart for genre: ${genre}`,
+          data: { values: genreData }, // Use filtered data here
+          mark: "bar",
+          encoding: {
+            x: { field: "Year", type: "ordinal", title: "Year" },
+            y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
+            tooltip: [
+              { field: "Global_Sales", type: "nominal", title: "Global Sales" },
+            ]
+          },
+        };
+    
+      // Embed the Vega-Lite chart
+      console.log(yourVlSpec); 
+      vegaEmbed(`#view4-${genre.replace(/\s/g, '-')}`, yourVlSpec);
+  });
+}
   
   // Call the function to load data and create the chart
-  loadDataAndCreateChart2_5();
+loadDataAndCreateChart3();
 
 async function loadDataAndCreateChartNA() {
     // Load the CSV data
