@@ -36,7 +36,7 @@ async function loadDataAndCreateChart() {
       Genre: d.Genre,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
     }))
-    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && !isNaN(d.Global_Sales)); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -72,7 +72,7 @@ async function loadDataAndCreateChart1_5() {
       Genre: d.Genre,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
     }))
-    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && !isNaN(d.Global_Sales)); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -102,13 +102,21 @@ async function loadDataAndCreateChart2() {
     const data = await d3.csv("./dataset/videogames_wide.csv");
   
     // Process the data (if needed), e.g., extract only certain categories like Platform, Genre, and Global_Sales
-    const filteredData = data.map(d => ({
+    const filteredData = data
+    .map(d => ({
       Year: d.Year,
       Genre: d.Genre,
       Platform: d.Platform,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
     }))
-    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
+    .filter(d => 
+            d.Global_Sales !== null && 
+            d.Global_Sales !== undefined && 
+            !isNaN(d.Global_Sales) &&          // Check if Global_Sales is a valid number
+            d.Genre && d.Genre.trim() !== "NA" &&  // Ensure Genre is valid (trim handles spaces)
+            d.Platform && d.Platform.trim() !== "NA" && // Ensure Platform is valid
+            d.Year && !isNaN(d.Year) && d.Year.trim() !== "NA" // Ensure Year is valid
+    ); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -172,8 +180,6 @@ async function loadDataAndCreateChart2() {
 
   // Load the CSV data using d3.csv and filter it to show total sales per Genre
 async function loadDataAndCreateChart3() {
-    
-//----------------------------------------------------------------
 
     // Load the CSV data
     const data = await d3.csv("./dataset/videogames_wide.csv");
@@ -186,7 +192,15 @@ async function loadDataAndCreateChart3() {
         Platform: d.Platform,
         Global_Sales: +d.Global_Sales,  // Convert sales to numbers
     }))
-    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
+    .filter(d => 
+        d.Global_Sales !== null && 
+        d.Global_Sales !== undefined && 
+        !isNaN(d.Global_Sales) &&          // Check if Global_Sales is a valid number
+        d.Genre && d.Genre.trim() !== "NA" &&  // Ensure Genre is valid (trim handles spaces)
+        d.Platform && d.Platform.trim() !== "NA" && // Ensure Platform is valid
+        d.Year && !isNaN(d.Year) && d.Year.trim() !== "NA" // Ensure Year is valid
+
+    ); // Filter out NA values
 
 
     const genres = [...new Set(filteredData.map(d => d.Genre))];
@@ -255,12 +269,22 @@ async function loadDataAndCreateChart4() {
         const data = await d3.csv("./dataset/videogames_wide.csv");
     
         // Process the data, extract only relevant columns
-        const filteredData = data.map(d => ({
+        const filteredData = data
+        .map(d => ({
             Year: d.Year,
             Genre: d.Genre,
             Platform: d.Platform,
             Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-        }));
+        }))
+        .filter(d => 
+            d.Global_Sales !== null && 
+            d.Global_Sales !== undefined && 
+            !isNaN(d.Global_Sales) &&          // Check if Global_Sales is a valid number
+            d.Genre && d.Genre.trim() !== "NA" &&  // Ensure Genre is valid (trim handles spaces)
+            d.Platform && d.Platform.trim() !== "NA" && // Ensure Platform is valid
+            d.Year && !isNaN(d.Year) && d.Year.trim() !== "NA" // Ensure Year is valid
+    
+        ); // Filter out NA values
         
         const platforms0 = [...new Set(filteredData.map(d => d.Platform))];
 
@@ -323,77 +347,77 @@ async function loadDataAndCreateChart4() {
 
 loadDataAndCreateChart4();
 
-async function loadDataAndCreateChartByPlatform() {
+// async function loadDataAndCreateChartByPlatform() {
 
-     // Load the CSV data
-     const data = await d3.csv("./dataset/videogames_wide.csv");
+//      // Load the CSV data
+//      const data = await d3.csv("./dataset/videogames_wide.csv");
     
-     // Process the data, extract only relevant columns
-     const filteredData = data.map(d => ({
-         Year: d.Year,
-         Genre: d.Genre,
-         Platform: d.Platform,
-         Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-     }));
+//      // Process the data, extract only relevant columns
+//      const filteredData = data.map(d => ({
+//          Year: d.Year,
+//          Genre: d.Genre,
+//          Platform: d.Platform,
+//          Global_Sales: +d.Global_Sales,  // Convert sales to numbers
+//      }));
  
-     const genres = [...new Set(filteredData.map(d => d.Genre))];
+//      const genres = [...new Set(filteredData.map(d => d.Genre))];
  
-     // Make divs for each genre dynamically
-     const container = document.getElementById('platformSalesContainer');
-     genres.forEach(genre => {
-         const div = document.createElement("div");
-         div.id = `view-${genre.replace(/\s/g, '-')}`; //sets id for div
-         container.appendChild(div); //appends new div to container
-     });
+//      // Make divs for each genre dynamically
+//      const container = document.getElementById('platformSalesContainer');
+//      genres.forEach(genre => {
+//          const div = document.createElement("div");
+//          div.id = `view-${genre.replace(/\s/g, '-')}`; //sets id for div
+//          container.appendChild(div); //appends new div to container
+//      });
  
-     genres.forEach(genre => {
-         // Filter data for each genre
-         const genreData = filteredData.filter(d => d.Genre === genre);
+//      genres.forEach(genre => {
+//          // Filter data for each genre
+//          const genreData = filteredData.filter(d => d.Genre === genre);
          
-         // New grouping and summing logic for each genre by year
-         const groupedData = [];
-         const salesByYear = {};
+//          // New grouping and summing logic for each genre by year
+//          const groupedData = [];
+//          const salesByYear = {};
  
-         genreData.forEach(d => {
-             if (!salesByYear[d.Year]) {
-                 salesByYear[d.Year] = 0;
-             }
-             salesByYear[d.Year] += d.Global_Sales; // Sum up sales for the same year
-         });
+//          genreData.forEach(d => {
+//              if (!salesByYear[d.Year]) {
+//                  salesByYear[d.Year] = 0;
+//              }
+//              salesByYear[d.Year] += d.Global_Sales; // Sum up sales for the same year
+//          });
  
-         for (const year in salesByYear) {
-             groupedData.push({
-                 Year: year,
-                 Global_Sales: salesByYear[year],
-             });
-         }
+//          for (const year in salesByYear) {
+//              groupedData.push({
+//                  Year: year,
+//                  Global_Sales: salesByYear[year],
+//              });
+//          }
  
-         // Log grouped data for debugging
-         console.log(`Grouped data for genre: ${genre}`, groupedData);
+//          // Log grouped data for debugging
+//          console.log(`Grouped data for genre: ${genre}`, groupedData);
  
-         // Create a Vega-Lite specification using the grouped data for each genre
-         const yourVlSpec = {
-             $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-             description: `Bar chart for genre: ${genre}`,
-             title: `Genre: ${genre}`,
-             data: { values: groupedData }, // Use grouped data here
-             mark: "bar",
-             width: 550,
-             encoding: {
-                 x: { field: "Year", type: "ordinal", title: "Year" },
-                 y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" },
-                 tooltip: [
-                     { field: "Global_Sales", type: "nominal", title: "Global Sales" },
-                 ]
-             },
-         };
+//          // Create a Vega-Lite specification using the grouped data for each genre
+//          const yourVlSpec = {
+//              $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+//              description: `Bar chart for genre: ${genre}`,
+//              title: `Genre: ${genre}`,
+//              data: { values: groupedData }, // Use grouped data here
+//              mark: "bar",
+//              width: 550,
+//              encoding: {
+//                  x: { field: "Year", type: "ordinal", title: "Year" },
+//                  y: { field: "Global_Sales", type: "quantitative", title: "Global Sales (in millions)" },
+//                  tooltip: [
+//                      { field: "Global_Sales", type: "nominal", title: "Global Sales" },
+//                  ]
+//              },
+//          };
  
-         // Embed the Vega-Lite chart
-         console.log(yourVlSpec); 
-         vegaEmbed(`#view-${genre.replace(/\s/g, '-')}`, yourVlSpec);
-     });
-     }
-loadDataAndCreateChartByPlatform();
+//          // Embed the Vega-Lite chart
+//          console.log(yourVlSpec); 
+//          vegaEmbed(`#view-${genre.replace(/\s/g, '-')}`, yourVlSpec);
+//      });
+//      }
+// loadDataAndCreateChartByPlatform();
 
 
 async function loadDataAndCreateChartNA() {
