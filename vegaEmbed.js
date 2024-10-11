@@ -43,7 +43,7 @@ async function loadDataAndCreateChart() {
       $schema: "https://vega.github.io/schema/vega-lite/v5.json",
       description: "Bar chart using video game sales data.",
       data: { values: filteredData }, // Use filtered data here
-      mark: "bar",
+      mark: { type: "bar", color: "rgb(220,50,100)" },
       encoding: {
         x: { field: "Platform", type: "ordinal", title: "Platform" }, // Change field to Platform or Genre
         y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
@@ -79,7 +79,7 @@ async function loadDataAndCreateChart1_5() {
       $schema: "https://vega.github.io/schema/vega-lite/v5.json",
       description: "Bar chart using video game sales data.",
       data: { values: filteredData }, // Use filtered data here
-      mark: "bar",
+      mark: { type: "bar", color: "rgb(220,50,150)" },
       encoding: {
         x: { field: "Genre", type: "ordinal", title: "Genre" }, // Change field to Platform or Genre
         y: { field: "Global_Sales", type: "quantitative", aggregate: "sum", title: "Global Sales (in millions)" },
@@ -244,7 +244,7 @@ async function loadDataAndCreateChart3() {
             description: `Bar chart for genre: ${genre}`,
             title: `Genre: ${genre}`,
             data: { values: groupedData }, // Use grouped data here
-            mark: "bar",
+            mark: { type: "bar", color: "pink" },
             width: 550,
             encoding: {
                 x: { field: "Year", type: "ordinal", title: "Year" },
@@ -327,7 +327,7 @@ async function loadDataAndCreateChart4() {
                 description: `Bar chart for platform: ${platform0}`,
                 title: `Platform: ${platform0}`,
                 data: { values: groupedData }, // Use grouped data here
-                mark: "bar",
+                mark: { type: "bar", color: "lightgreen" },
                 width: 550,
                 encoding: {
                     x: { field: "Year", type: "ordinal", title: "Year" },
@@ -434,7 +434,7 @@ async function loadDataAndCreateChartNA() {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
         description: "Bar chart showing JP Sales per Platform.",
         data: { values: filteredData }, //filtered data 
-        mark: "bar",
+        mark: { type: "bar", color: "red" },
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
             y: { field: "NA_Sales", type: "quantitative", aggregate: "sum", title: "NA Sales (in millions)" }, // y for JP Sales
@@ -465,7 +465,7 @@ async function loadDataAndCreateChartEU() {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
         description: "Bar chart showing JP Sales per Platform.",
         data: { values: filteredData }, //filtered data 
-        mark: "bar",
+        mark: { type: "bar", color: "orange" },
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
             y: { field: "EU_Sales", type: "quantitative", aggregate: "sum", title: "EU Sales (in millions)" }, // y for JP Sales
@@ -496,7 +496,7 @@ async function loadDataAndCreateChartJP() {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
         description: "Bar chart showing JP Sales per Platform.",
         data: { values: filteredData }, //filtered data 
-        mark: "bar",
+        mark: { type: "bar", color: "green" },
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
             y: { field: "JP_Sales", type: "quantitative", aggregate: "sum", title: "JP Sales (in millions)" }, // y for JP Sales
@@ -527,7 +527,7 @@ async function loadDataAndCreateChartOther() {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
         description: "Bar chart showing JP Sales per Platform.",
         data: { values: filteredData }, //filtered data 
-        mark: "bar",
+        mark: { type: "bar", color: "purple" },
         encoding: {
             x: { field: "Platform", type: "ordinal", title: "Platform" }, // x for Platform
             y: { field: "Other_Sales", type: "quantitative", aggregate: "sum", title: "Other Sales (in millions)" }, // y for JP Sales
