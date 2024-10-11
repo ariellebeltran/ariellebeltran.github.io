@@ -194,7 +194,7 @@ p, li {
     overflow: hidden;
 }
 
-#view, #view2, #view3, #view4, #view45, #view5, #view6, #view7, #view8 {
+#view, #view2, #view3, #view4, #view45, #view5, #view6, #view7, #view8, #platformSalessContainer{
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
@@ -215,7 +215,7 @@ p, li {
     }
 }
 
-#genreContainer .chart-wrapper, #platformContainer .chart-wrapper{
+#genreContainer .chart-wrapper,#platformContainer .chart-wrapper{
     padding-bottom: 20px;
     /* max-width: 669px; */
 }
