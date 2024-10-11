@@ -30,11 +30,13 @@ async function loadDataAndCreateChart() {
     const data = await d3.csv("./dataset/videogames_wide.csv");
   
     // Process the data (if needed), e.g., extract only certain categories like Platform, Genre, and Global_Sales
-    const filteredData = data.map(d => ({
+    const filteredData = data
+    .map(d => ({
       Platform: d.Platform,
       Genre: d.Genre,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-    }));
+    }))
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -64,11 +66,13 @@ async function loadDataAndCreateChart1_5() {
     const data = await d3.csv("./dataset/videogames_wide.csv");
   
     // Process the data (if needed), e.g., extract only certain categories like Platform, Genre, and Global_Sales
-    const filteredData = data.map(d => ({
+    const filteredData = data
+    .map(d => ({
       Platform: d.Platform,
       Genre: d.Genre,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-    }));
+    }))
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -103,7 +107,8 @@ async function loadDataAndCreateChart2() {
       Genre: d.Genre,
       Platform: d.Platform,
       Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-    }));
+    }))
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
   
     // Create the Vega-Lite specification using the filtered data
     var yourVlSpec = {
@@ -174,12 +179,15 @@ async function loadDataAndCreateChart3() {
     const data = await d3.csv("./dataset/videogames_wide.csv");
     
     // Process the data, extract only relevant columns
-    const filteredData = data.map(d => ({
+    const filteredData = data
+    .map(d => ({
         Year: d.Year,
         Genre: d.Genre,
         Platform: d.Platform,
         Global_Sales: +d.Global_Sales,  // Convert sales to numbers
-    }));
+    }))
+    .filter(d => d.Global_Sales !== null && d.Global_Sales !== undefined && d.Global_Sales !== 'NA'); // Filter out NA values
+
 
     const genres = [...new Set(filteredData.map(d => d.Genre))];
 
