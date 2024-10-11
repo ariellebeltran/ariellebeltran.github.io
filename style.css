@@ -55,7 +55,7 @@
 
 .dropdown-content a:hover, .dropdown-content2 a:hover  {
     background-color: rgb(222, 222, 222);
-    color:rgb(184, 13, 13);
+    color:purple;
 }
 
 
@@ -158,9 +158,11 @@ h1{
     margin: 50px;
 }
 
-.project-subsection{
-    margin-bottom: 20px;
-    background-color: white;
+.body-headers p{
+    max-width: 100%;
+}
+
+.about-subsection, .project-subsection{
 
     .content{
         background-color: white;
@@ -173,10 +175,6 @@ h1{
 /* .body-headers .collapsible{
     margin: 0px 25px !important;
 } */
-
-.body-headers p{
-    max-width: 100%;
-}
 
 svg{
     border: solid black;
