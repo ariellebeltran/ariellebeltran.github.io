@@ -10,6 +10,6 @@ window.addEventListener('load', function() {
 
     // Wait for the fade-out animation to finish, then redirect
     setTimeout(function() {
-        window.location.href = "./landingpage/index.html";
+        window.location.href = "../landingpage/index.html";
     }, 5000); // Adjust the time (in milliseconds) if you want a longer or shorter delay
 });
