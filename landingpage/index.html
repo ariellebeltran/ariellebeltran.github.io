@@ -41,11 +41,49 @@
             <h1>Main Header</h1>
             <p>This is the paragraph for the main header.</p>
         </div>
-        <div class="item item2">
+        <!-- <div class="item item2">
             <h2>This is a timeline</h2>
+        </div> -->
+        <div class="item item3">
+            <!-- <h3 onclick="toggleLayout()">Grid</h3> Toggle button -->
+            <button id="toggleButton" onclick="toggleLayout()">Timeline</button>
+            
         </div>
     </div>
+
+    <div id="sliderContainer" style="display: none;">
+        <label for="yearSlider">Select Year:</label>
+        <input type="range" id="yearSlider" min="2022" max="2024" value="2024">
+        <span id="selectedYear">2024</span>
+   
+    </div>
     
+    <!-- <button id="toggleButton" onclick="toggleLayout()">Timeline</button> -->
+
+
+    <div class="container2 grid-layout" id="timelineContainer">
+        <div class="itemb item1b"  data-year="2024">
+            <h2>2024</h2>
+        </div>
+        <div class="itemb item2b"  data-year="2024">
+            <h2>2024</h2>
+        </div>
+        <div class="itemb item3b"  data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item4b" data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item5b" data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item6b" data-year="2022">
+            <h2>2022</h2>
+        </div>
+        <div class="itemb item7b" data-year="2022">
+            <h2>2022</h2>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

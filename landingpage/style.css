@@ -5,6 +5,80 @@
     text-align: center;
 }
 
+/* .container2{
+    display: grid;
+    grid-template-columns: 50vw;
+    grid-template-rows: auto;
+} */
+
+/* Default grid layout */
+.container2.grid-layout {
+    display: grid;
+    grid-template-columns: 50vw;
+    gap: 10px;
+}
+
+/* Timeline layout */
+.container2.timeline-layout {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.itemb {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    min-width: 25vh; /* Set a minimum width for items in timeline */
+}
+
+.item3{
+    position: relative;
+    margin-left: auto;
+    top: 0;
+    right: 0;
+}
+
+/* .itemb{
+    background-color: #efefef;
+    border: #ffffff solid;
+    height: auto;
+} */
+
+.item1b{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.item2b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start:1;
+}
+
+.item3b{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.item4b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+}
+
+.item5b{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.item6b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+}
+
 .nav-container{
     display: grid;
     grid-template-columns: 1fr auto; /* Pushes .item-nav to the right */
@@ -139,7 +213,7 @@ a, a:visited {
     color:black;
 }
 
-h1, h2{
+h1, h2, h3{
     font-family: "Staatliches", sans-serif;
     font-weight: 400;
     font-style: normal;
