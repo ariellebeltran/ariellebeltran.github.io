@@ -17,7 +17,7 @@
     display: block;
 }
 
-.viewItem {
+.changeView {
     margin: 0;
     padding: 0;
     font-size: 1em;
@@ -32,9 +32,10 @@
 
 /* Timeline layout */
 .container2.timeline-layout {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: 50vw;
+    /* overflow-x: auto; */
     gap: 10px;
 }
 
@@ -42,9 +43,13 @@
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
-    min-width: 35vw; /* Set a minimum width for items in timeline */
+    min-width: 35vw;
     height: 45vh;
 }
+
+/* .container2#timelineContainer{
+    width: 200vw;
+} */
 
 .itemView{
     position: relative;
