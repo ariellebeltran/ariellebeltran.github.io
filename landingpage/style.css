@@ -42,7 +42,8 @@
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
-    min-width: 25vh; /* Set a minimum width for items in timeline */
+    min-width: 35vw; /* Set a minimum width for items in timeline */
+    height: 45vh;
 }
 
 .itemView{
