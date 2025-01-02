@@ -21,35 +21,27 @@ toggle between hiding and showing the dropdown content */
 // }
 
 function myFunction() {
-    var dropdown = document.getElementById("aDropdown");
-    var container = document.querySelector(".container");
-    
-    // Toggle the display of the dropdown
-    dropdown.classList.toggle("show");
-    
-    // If dropdown is shown, adjust the margin of the container
-    if (dropdown.classList.contains("show")) {
-        container.style.marginTop = "125px";  // Adjust this value based on the dropdown height
+    var x = document.getElementById("aDropdown");
+    if (x.style.display === "block") {
+        x.style.display = "none";
     } else {
-        container.style.marginTop = "0";  // Reset the margin when dropdown is hidden
+        x.style.display = "block";
     }
 }
 
-// Close the dropdown if clicked outside
 window.onclick = function(event) {
-    if (!event.target.matches('.dropBttn')) {
+    if (!event.target.matches('.hamburger_symb')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
+        for (var i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
             }
         }
-        // Reset the margin when clicking outside
-        document.querySelector(".container").style.marginTop = "0";
     }
 }
+
+
 
 // function toggleLayout() {
 //     const container = document.getElementById("timelineContainer");
