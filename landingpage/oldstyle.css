@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+
+/* body */
+body{
+    margin: 15px;
+}
+/* body =================================================*/
+
+/* nav */
+nav {
+    text-align: right;
+    position: sticky;
+    top:0;
+    overflow:visible;
+    /* padding: 25px 0px; */
+    background-color: white;
+    font-style: normal;
+    z-index: 1000;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute items evenly */
+    align-items: center;
+    /* Vertically align items */
+    padding: 10px 20px;
+    /* Optional: Adjust spacing */
+    font-family: Helvetica, Sans-Serif;
+    font-size: 18px;
+    font-optical-sizing: auto;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.item-nav1 {
+    display: flex;
+    align-items: center;
+    /* Align logo and text vertically */
+}
+/* nav ===========================================================*/
+
+/* name-intro */
+#intro1, #intro2{
+    padding-bottom:5px;
+}
+/* name-intro ====================================================*/
+
+/* this is body container */
+.container{
+    display: grid;
+    text-align: center;
+}
+
+/* .container2{
+    display: grid;
+    grid-template-columns: 50vw;
+    grid-template-rows: auto;
+} */
+/* 
+.viewContainer{
+    display: block;
+}
+
+.changeView {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+} */
+
+/* Default grid layout */
+/* .container2.grid-layout {
+    display: grid;
+    grid-template-columns: 50vw;
+    gap: 10px;
+} */
+
+/* Timeline layout */
+/* .container2.timeline-layout {
+    display: grid;
+    grid-template-columns: 50vw;
+    gap: 10px;
+} */
+
+/* .itemb {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    min-width: 35vw;
+    height: 45vh;
+} */
+
+/* .itemView{
+    position: relative;
+    margin-left: auto;
+    top: 0;
+    right: 0;
+} */
+
+
+/* .item1b{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.item2b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start:1;
+}
+
+.item3b{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.item4b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+}
+
+.item5b{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.item6b{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+} */
+
+.container-roles.grid-layout {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+}
+
+.item-role{
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    /* min-width: 15vw; */
+    height: 60vh;
+}
+
+.item1{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.item2{
+    grid-column-start: 2;
+    grid-row-start:1;
+}
+
+.item3{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.item4{
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+
+.item5{
+    grid-column-start: 5;
+    grid-row-start: 1;
+}
+
+
+.nav-container{
+    display: grid;
+    grid-template-columns: 1fr auto; /* Pushes .item-nav to the right */
+    align-items: center; /* Vertically centers the content */
+}
+
+/* .item-nav{
+    
+} */
+
+/* #toggleButton{
+    background-color: #c2c2c2;
+    border: none;
+    color: black;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#toggleButton:hover{
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px 26px;
+} */
+
+/* #yearSlider{
+    -webkit-appearance: none;
+    width: 3vw;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  #yearSlider:hover {
+    opacity: 1;
+  }
+  
+  #yearSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #000000;
+    cursor: pointer;
+  } */
+
+/* #toggleButton{
+    background-color: white;
+    border: none;
+    padding: 10px 28px 10px 8px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#toggleButton:hover{
+    font-weight: 600;
+    font-style: normal;
+} */
+
+.dropBttn {
+ 
+    background-color: white;
+    border: none;
+    cursor: pointer;
+   
+   
+    display: flex; /* Center the icon within the button */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+.dropBttn:hover, .dropBttn:focus{
+}
+
+.hamburger_symb{
+    font-size: 2em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+   
+}
+
+.dropdown-menu{
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+
+.dropdown-content{
+    display: none;
+    position: fixed;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    /* min-width: 100px; */
+    /* max-width: 100px; */
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 10px 0px;
+    /* padding-left: 50vw; */
+    margin-top: 100px;
+    /* margin: 100px;
+    margin-left: 0px; */
+    text-align:center;
+    /* margin-right: 500px; */
+}
+
+.dropdown-content a{ 
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100vw;  /* Use 100% of the viewport width */
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+
+    font-family: "PT Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* text-transform: uppercase; */
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(7, 7, 7);
+    color:rgb(231, 231, 231);
+
+    font-size: 1.5em;
+
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+.dropdown-content.show {
+    display: block; /* Visible when .show is added */
+}
+
+.content {
+    padding: 0px 20px;
+    display: none;
+    overflow: hidden;
+    background-color: #efefef;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color:black;
+}
+
+h1, h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    /* font-style: normal; */
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+p, h3, #sliderContainer{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
