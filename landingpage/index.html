@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>My Portfolio</title>
     <link rel="icon" type="image/AB_Logo"
-        href="https://ariellebeltran.github.io/portfolio/landingpage/images/AB_Logo.png" alt="Arielle Beltran's initials" width="30px" height="30px">
+        href="https://ariellebeltran.github.io/portfolio/landingpage/images/AB_Logo.png"
+        alt="Arielle Beltran's initials" width="30px" height="30px">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <nav>
@@ -23,21 +26,22 @@
         </div> -->
         <div class="container-nav">
             <div class="item-nav1">
-                <a href="#home"><img src="https://ariellebeltran.github.io/portfolio/landingpage/images/AB_Logo_25PercSmall.png"
-                    alt="Arielle Beltran's initials" width="60px" height="39px"></a>
+                <a href="#home"><img
+                        src="https://ariellebeltran.github.io/portfolio/landingpage/images/AB_Logo_25PercSmall.png"
+                        alt="Arielle Beltran's initials" width="60px" height="39px"></a>
             </div>
             <div class="item-nav2">
                 <div class="dropdown-menu">
                     <button onclick="myFunction()" class="dropBttn"><span class="hamburger_symb">&#9776;</span></button>
                     <div id="aDropdown" class="dropdown-content">
-                        <a href="#about">About</a>
+                        <a href="#about-section">About</a>
                         <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </nav>
 
     <div class="container-about">
@@ -46,23 +50,34 @@
             <!-- <h1 id="intro2">Arielle Beltran</h1> -->
         </div>
 
-        <div class="about-section grid-layout">
-            <button type="button" class="collapsible"><h1>Arielle Beltran</h1></button>
+        <div class="about-section" id="about-section">
+            <button type="button" class="collapsible">
+                <h1>Arielle Beltran</h1>
+            </button>
 
             <!-- only have this if you want the collapsible to be open by default -- style="display: block;" -->
-            <div class="about-content"> 
-             
-                <div class="item-content itemcontent1">
-                    <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
-                    alt="Arielle Beltran's face">
-                </div>
-                <div class="item-content itemcontent2">
-                    <p>I am a 5th+ year SIAT student with a concentration in design. My main skills are in user experience design, web design, and 3D-modeling. I also enjoy learning and improving on my skills related to coding and graphic design. </p>
+            <div class="about-collapsible">
+                <div class="about-content grid-layout">
 
+                    <div class="item-content itemcontent1">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                    </div>
+                    <div class="item-content itemcontent2">
+                        <p>I am a 5th+ year SIAT student with a concentration in design. My main skills are in user
+                            experience design, web design, and 3D-modeling. I also enjoy learning and improving on my
+                            skills
+                            related to coding and graphic design. </p>
+
+                    </div>
                 </div>
             </div>
         </div>
-       
+
     </div>
 
     <!-- <div class="viewContainer">
@@ -76,7 +91,7 @@
         <span id="selectedYear">2024</span>
    
     </div> -->
-    
+
     <!-- <button id="toggleButton" onclick="toggleLayout()">Timeline</button> -->
 
     <!-- <div class="container2 grid-layout" id="timelineContainer">
@@ -116,11 +131,12 @@
         <div class="item-role item4">
             <h2>Graphic Designer</h2>
         </div>
-        <div class="item-role item5" >
+        <div class="item-role item5">
             <h2>UX Researcher</h2>
         </div>
-    
+
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>
