@@ -143,6 +143,19 @@ nav {
     text-align: center;
 } */
 
+.about-content.grid-layout {
+    display: grid;
+}
+
+.item-content1{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.item-content2{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
 /* main content here ==========================================================*/
 .container-roles.grid-layout {
     margin-top: 30px;
