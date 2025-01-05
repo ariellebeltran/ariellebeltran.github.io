@@ -263,7 +263,7 @@ nav {
 
 .inside-header {
     grid-column: 1 / span 4;
-    height: 10vh;
+    height: 30px;
 }
 
 .inside1 {
