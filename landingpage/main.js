@@ -85,3 +85,24 @@ document.addEventListener("click", (event) => {
         }
     }
 });
+
+
+//dropside? for the main content
+
+function expandItem(element) {
+  const expandedItem = document.querySelector('.item-role.expanded');
+  if (expandedItem) {
+      expandedItem.classList.remove('expanded');
+  }
+  element.classList.add('expanded');
+}
+
+
+// close the collapsible section if the user clicks anywhere else
+// Add event listener for clicks on the document
+document.addEventListener("click", (event) => {
+  const expandedItem = document.querySelector('.item-role.expanded');
+  if (expandedItem && !expandedItem.contains(event.target)) {
+      expandedItem.classList.remove('expanded');
+  }
+});

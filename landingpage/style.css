@@ -75,12 +75,12 @@ nav {
 /* nav ===========================================================*/
 
 /* name-intro */
-#intro1{
+#intro1 {
     /* text-align: center; */
     padding-bottom: 5px;
 }
 
-.collapsible:hover{
+.collapsible:hover {
     color: rgb(100, 100, 100);
 }
 
@@ -157,15 +157,15 @@ nav {
     /* height: 60vh; */
 }
 
-.itemcontent1{
+.itemcontent1 {
     grid-column-start: 1;
     grid-row-start: 1;
 }
 
-.itemcontent2{
+.itemcontent2 {
     grid-column-start: 1;
     grid-row-start: 2;
-    
+
 }
 
 .itemcontent2 p {
@@ -175,7 +175,7 @@ nav {
 
 
 /* main content here ==========================================================*/
-.container-roles.grid-layout {
+/* .container-roles.grid-layout {
     margin-top: 30px;
     display: grid;
     gap: 10px;
@@ -185,9 +185,54 @@ nav {
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
-    /* min-width: 15vw; */
     height: 60vh;
+} */
+
+.container-roles {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
 }
+
+.item-role {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    height: 60vh;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.item-role.expanded {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    /* Full viewport height */
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Adjust columns as needed */
+    gap: 10px;
+}
+
+.item-role .inside1,
+.item-role .inside2 {
+    display: none;
+    /* Hide content by default */
+}
+
+.item-role.expanded .inside1,
+.item-role.expanded .inside2 {
+    display: block;
+    /* Show content when expanded */
+    padding: 0px 20px;
+}
+
 
 .item1 {
     grid-column-start: 1;
@@ -214,6 +259,26 @@ nav {
     grid-row-start: 1;
 }
 
+/* ---- */
+
+.inside-header {
+    grid-column: 1 / span 4;
+    height: 10vh;
+}
+
+.inside1 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.inside2 {
+    grid-column: 2 / span 4;
+    grid-row-start: 2;
+
+    text-align: left;
+}
+
+/* navigation dropdown  */
 .dropBttn {
 
     background-color: white;
@@ -228,7 +293,6 @@ nav {
     align-items: center;
     /* Center vertically */
 }
-
 
 .hamburger_symb {
     font-size: 2em;
