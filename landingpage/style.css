@@ -37,7 +37,7 @@ h3,
 /* nav */
 nav {
     text-align: right;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     overflow: visible;
     /* padding: 25px 0px; */
@@ -48,6 +48,7 @@ nav {
 
 .container-nav {
     display: flex;
+    position: sticky;
     justify-content: space-between;
     /* Distribute items evenly */
     align-items: center;
@@ -64,6 +65,8 @@ nav {
 }
 
 .item-nav1 {
+    position: sticky;
+
     display: flex;
     align-items: center;
     /* Align logo and text vertically */
@@ -111,15 +114,28 @@ nav {
     margin-left: 5px; */
 }
 
+/* container of the collapsible */
 .container-about {
     text-align: center;
 }
 
+/* content inside the collapsible */
 .about-content {
     padding: 40px;
     background-color: rgb(44, 44, 44);
     color: white;
+    overflow: hidden;
+    display: none;
 }
+
+/* .content {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: white;
+    max-height: 0;
+    background-color: #f1f1f1;
+    transition: max-height 0.2s ease-out;
+  } */
 
 /* this is body container */
 /* .container{
@@ -204,13 +220,14 @@ nav {
     /* min-width: 100px; */
     /* max-width: 100px; */
     width: 100vw;
+    height: 25vh;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
     padding: 10px 0px;
     /* padding-left: 50vw; */
-    margin-top: 100px;
+    margin-top: 75px;
     /* margin: 100px;
     margin-left: 0px; */
     text-align: center;
@@ -223,6 +240,7 @@ nav {
     text-decoration: none;
     display: block;
     width: 100vw;
+    height: 5vh;
     /* Use 100% of the viewport width */
     z-index: 1;
     padding: 10px;
