@@ -245,6 +245,10 @@ nav {
     padding: 0px 20px;
 }
 
+/* had to make more spacing on the right so that its more aligned to the nav  */
+.inside2{
+    margin-right: 30px;
+}
 
 .item1 {
     grid-column-start: 1;
@@ -291,7 +295,26 @@ nav {
     text-align: left;
 }
 
-/* navigation dropdown  */
+/* sections for roles */
+
+.section-project{
+    padding: 20px;
+}
+
+.section-project h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 60px;
+}
+
+.section-project p{
+    text-align: left;
+    padding-top:20px;
+}
+
+/* navigation dropdown ===================== */
 .dropBttn {
 
     background-color: white;
