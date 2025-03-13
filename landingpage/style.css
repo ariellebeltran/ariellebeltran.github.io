@@ -204,7 +204,7 @@ nav {
 
 .item-expanded {
     display: none; /* Ensures expanded content is hidden by default */
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .item-collapsed{
@@ -240,7 +240,7 @@ nav {
 
 .item-role {
     background-color: #f0f0f0;
-    /* padding: 20px; */
+    
     text-align: center;
     height: 60vh;
     transition: all 0.3s ease;
@@ -250,6 +250,7 @@ nav {
 
 .item-role.expanded {
     position: absolute;
+    padding: 20px;
     /* top: 0; */
     left: 0;
     width: 100%;
