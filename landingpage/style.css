@@ -32,7 +32,7 @@ h3,
     margin: 0;
 }
 
-footer{
+footer {
     padding-top: 30px;
     text-align: center;
     /* background-color: rgb(92, 92, 92); */
@@ -200,6 +200,36 @@ nav {
     height: 60vh;
 } */
 
+/* Default state: only the collapsed part is visible */
+
+.item-expanded {
+    display: none; /* Ensures expanded content is hidden by default */
+}
+
+.item-collapsed{
+    padding: none;
+    margin: none;
+    height: 60vh;
+}
+
+.expanded .item-expanded {
+    display: contents; /* Show expanded content when parent has .expanded */
+   
+}
+
+.expanded .item-collapsed {
+    display: none; /* Hide collapsed content when expanded */
+}
+
+.dropdown-content {
+    display: none; /* Keep dropdown hidden by default */
+}
+
+.show {
+    display: block !important; /* Class to show dropdown when active */
+}
+
+
 .container-roles {
     margin-top: 30px;
     display: grid;
@@ -209,12 +239,13 @@ nav {
 
 .item-role {
     background-color: #f0f0f0;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     height: 60vh;
     transition: all 0.3s ease;
     overflow: hidden;
 }
+
 
 .item-role.expanded {
     position: absolute;
@@ -246,7 +277,7 @@ nav {
 }
 
 /* had to make more spacing on the right so that its more aligned to the nav  */
-.inside2{
+.inside2 {
     margin-right: 30px;
 }
 
@@ -297,11 +328,11 @@ nav {
 
 /* sections for roles */
 
-.section-project{
+.section-project {
     padding: 20px;
 }
 
-.section-project h2{
+.section-project h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -309,9 +340,9 @@ nav {
     padding-top: 60px;
 }
 
-.section-project p{
+.section-project p {
     text-align: left;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 /* navigation dropdown ===================== */

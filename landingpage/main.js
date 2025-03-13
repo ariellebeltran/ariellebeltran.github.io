@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 // close the collapsible section if the user clicks anywhere else
 document.addEventListener("click", (event) => {
     const aboutSection = document.getElementById("about-section");
@@ -87,8 +86,29 @@ document.addEventListener("click", (event) => {
 });
 
 
-//dropside? for the main content
+//for the main content, need to separate the content that shows at default vs when expanded
+function expandItem(element) {
+    let collapsed = element.querySelector('.item-collapsed');
+    let expanded = element.querySelector('.item-expanded');
 
+    // Check if this item is already expanded
+    let isExpanded = expanded.style.display === 'block';
+
+    // Close all other expanded items
+    document.querySelectorAll('.item-role').forEach(item => {
+        item.querySelector('.item-collapsed').style.display = 'block';
+        item.querySelector('.item-expanded').style.display = 'none';
+    });
+
+    // Toggle the clicked item
+    if (!isExpanded) {
+        collapsed.style.display = 'none';
+        expanded.style.display = 'block';
+    }
+}
+
+
+//dropside? for the main content
 function expandItem(element) {
   const expandedItem = document.querySelector('.item-role.expanded');
   if (expandedItem) {
@@ -106,3 +126,7 @@ document.addEventListener("click", (event) => {
       expandedItem.classList.remove('expanded');
   }
 });
+
+
+
+
