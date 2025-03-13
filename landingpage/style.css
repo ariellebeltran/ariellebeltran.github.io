@@ -204,6 +204,7 @@ nav {
 
 .item-expanded {
     display: none; /* Ensures expanded content is hidden by default */
+    padding-top: 20px;
 }
 
 .item-collapsed{
