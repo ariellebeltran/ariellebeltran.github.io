@@ -217,7 +217,26 @@ nav {
 .item-collapsed{
     padding: none;
     margin: none;
-    height: 60vh;
+    /* height: 60vh; */
+}
+
+.item-title{
+    /* position: absolute;
+    bottom: 8px;
+    left: 16px; */
+    bottom: 8px;
+    transform: translate(0%, -200%);;
+}
+
+#role-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        /* font-style: normal; */
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        color: white;
+
 }
 
 .expanded .item-expanded {
@@ -246,10 +265,10 @@ nav {
 }
 
 .item-role {
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
     
     text-align: center;
-    height: 60vh;
+    /* height: 60vh; */
     transition: all 0.3s ease;
     overflow: hidden;
 }
