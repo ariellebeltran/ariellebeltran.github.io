@@ -209,6 +209,10 @@ nav {
 
 /* Default state: only the collapsed part is visible */
 
+.container-title{
+    text-align: center;
+}
+
 .item-expanded {
     display: none; /* Ensures expanded content is hidden by default */
     margin-top: 20px;
