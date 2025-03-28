@@ -217,6 +217,7 @@ nav {
 .item-collapsed{
     padding: none;
     margin: none;
+    background-color: white;
     /* height: 60vh; */
 }
 
@@ -224,6 +225,7 @@ nav {
     /* position: absolute;
     bottom: 8px;
     left: 16px; */
+    font-size: 1.5em;
     bottom: 8px;
     transform: translate(0%, -200%);;
 }
@@ -265,7 +267,7 @@ nav {
 }
 
 .item-role {
-    background-color: #f5f5f5;
+    /* background-color: #ffffff; */
     
     text-align: center;
     /* height: 60vh; */
@@ -275,12 +277,15 @@ nav {
 
 
 .item-role.expanded {
+    background-color: #eeeeee;
+
     position: absolute;
-    padding: 20px;
+    /* padding-top:40px; */
+    padding: 40px 20px 0px 20px;
     /* top: 0; */
     left: 0;
     width: 100%;
-    height: 60vh;
+    height: 90vh;
     /* Full viewport height */
     z-index: 10;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
