@@ -126,7 +126,3 @@ document.addEventListener("click", (event) => {
       expandedItem.classList.remove('expanded');
   }
 });
-
-
-
-

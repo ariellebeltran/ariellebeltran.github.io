@@ -24,12 +24,25 @@ h2 {
 }
 
 p,
-h3, li,
+h3,
+li,
 #sliderContainer {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin: 0;
+    padding: 0;
+}
+
+.numbertext {
+    color: rgb(43, 43, 43);
+    transform: translate(0%, -150%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    font-size: 14px;
+
 }
 
 footer {
@@ -99,6 +112,7 @@ nav {
 #intro2 {
     padding-top: 30px;
 }
+
 .collapsible:hover {
     color: rgb(100, 100, 100);
 }
@@ -141,7 +155,7 @@ nav {
 /* content inside the collapsible */
 .about-collapsible {
     padding: 40px;
-    background-color: rgb(233,233,233);
+    background-color: rgb(233, 233, 233);
 
     color: rgb(0, 0, 0);
     overflow: hidden;
@@ -209,73 +223,103 @@ nav {
 
 /* Default state: only the collapsed part is visible */
 
-.container-title{
+.container-title {
     text-align: center;
 }
 
-.image-heading{
+.image-heading {
     margin: 40px 40px 0px;
     text-align: center;
 }
 
-.image-heading-smaller{
+.image-heading-smaller {
     margin: 20px 20px 0px;
     text-align: center;
 }
 
-.image-heading, .image-heading-smaller img{
+.image-heading,
+.image-heading-smaller img {
     max-width: 100%;
     height: auto;
-    width: auto\9; /* ie8 */
+    width: auto\9;
+    /* ie8 */
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides1 {
+    display: none;
+}
+
+.dot1 {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transform: translate(0%, -200%);
+    transition: background-color 0.6s ease;
 }
 
 .item-expanded {
-    display: none; /* Ensures expanded content is hidden by default */
+    display: none;
+    /* Ensures expanded content is hidden by default */
     margin-top: 20px;
 }
 
-.item-collapsed{
+.item-collapsed {
     padding: none;
     margin: none;
     background-color: white;
     /* height: 60vh; */
 }
 
-.item-title{
+.item-title {
     /* position: absolute;
     bottom: 8px;
     left: 16px; */
     font-size: 1.5em;
     bottom: 8px;
-    transform: translate(0%, -200%);;
+    transform: translate(0%, -200%);
+    ;
 }
 
 #role-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        /* font-style: normal; */
-        text-transform: uppercase;
-        text-align: center;
-        margin: 0;
-        color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    /* font-style: normal; */
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    color: white;
 
 }
 
 .expanded .item-expanded {
-    display: contents; /* Show expanded content when parent has .expanded */
-   
+    display: contents;
+    /* Show expanded content when parent has .expanded */
+
 }
 
 .expanded .item-collapsed {
-    display: none; /* Hide collapsed content when expanded */
+    display: none;
+    /* Hide collapsed content when expanded */
 }
 
 .dropdown-content {
-    display: none; /* Keep dropdown hidden by default */
+    display: none;
+    /* Keep dropdown hidden by default */
 }
 
 .show {
-    display: block !important; /* Class to show dropdown when active */
+    display: block !important;
+    /* Class to show dropdown when active */
 }
 
 
@@ -288,7 +332,7 @@ nav {
 
 .item-role {
     /* background-color: #ffffff; */
-    
+
     text-align: center;
     /* height: 60vh; */
     transition: all 0.3s ease;
@@ -402,7 +446,8 @@ nav {
     padding-top: 60px;
 }
 
-.section-project p, li {
+.section-project p,
+li {
     text-align: left;
     padding-top: 20px;
 }
