@@ -24,7 +24,7 @@ h2 {
 }
 
 p,
-h3,
+h3, li,
 #sliderContainer {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -213,6 +213,17 @@ nav {
     text-align: center;
 }
 
+.image-heading{
+    margin: 40px 40px 0px;
+    text-align: center;
+}
+
+.image-heading img{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
 .item-expanded {
     display: none; /* Ensures expanded content is hidden by default */
     margin-top: 20px;
@@ -366,7 +377,16 @@ nav {
 /* sections for roles */
 
 .section-project {
-    padding: 20px;
+    padding: 0px 500px;
+
+    @media only screen and (max-width: 1820px) {
+        /*For surface pro screen*/
+        padding: 0px 200px;
+    }
+
+    @media only screen and (max-width: 1115px) {
+        padding: 20px;
+    }
 }
 
 .section-project h2 {
@@ -377,7 +397,7 @@ nav {
     padding-top: 60px;
 }
 
-.section-project p {
+.section-project p, li {
     text-align: left;
     padding-top: 20px;
 }
