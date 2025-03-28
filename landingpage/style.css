@@ -218,7 +218,12 @@ nav {
     text-align: center;
 }
 
-.image-heading img{
+.image-heading-smaller{
+    margin: 20px 20px 0px;
+    text-align: center;
+}
+
+.image-heading, .image-heading-smaller img{
     max-width: 100%;
     height: auto;
     width: auto\9; /* ie8 */
