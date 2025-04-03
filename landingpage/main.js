@@ -93,6 +93,7 @@ function expandItem(element) {
 
     // Check if this item is already expanded
     let isExpanded = expanded.style.display === 'block';
+    
 
     // Close all other expanded items
     document.querySelectorAll('.item-role').forEach(item => {
@@ -105,17 +106,22 @@ function expandItem(element) {
         collapsed.style.display = 'none';
         expanded.style.display = 'block';
     }
+
 }
 
 
 // Expands the clicked item
 function expandItem(element) {
     const expandedItem = document.querySelector('.item-role.expanded');
+    // const collapsedItem = document.querySelector('.item-role.collapsed');
+
     if (expandedItem) {
-        expandedItem.classList.remove('expanded');
+        expandedItem.classList.remove('expanded');  
     }
     element.classList.add('expanded');
+   
 }
+
 
 // Closes the expanded section if the user clicks anywhere else
 document.addEventListener("click", (event) => {

@@ -1,0 +1,1056 @@
+js
+
+// navigation js
+
+function myFunction() {
+    var x = document.getElementById("aDropdown");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+window.onclick = function (event) {
+    if (!event.target.matches('.hamburger_symb')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+}
+
+// Add event listener to all dropdown links to close dropdown when clicked
+var dropdownLinks = document.querySelectorAll("#aDropdown a");
+dropdownLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+        var x = document.getElementById("aDropdown");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        }
+    });
+});
+
+
+// for the dropdown content for the about section
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+        event.stopPropagation(); // Prevent the click from propagating to the document
+    });
+}
+
+// to open the about section if user clicks on 'about' under the nav bar
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutLink = document.querySelector("a[href='#about-section']");
+    if (aboutLink) {
+        aboutLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            const aboutSection = document.getElementById("about-section");
+            const collapsible = aboutSection.querySelector(".collapsible");
+            const aboutCollapsible = aboutSection.querySelector(".about-collapsible");
+
+            if (collapsible && aboutCollapsible) {
+                aboutCollapsible.style.display = "block";
+                collapsible.classList.add("active");
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+            }
+            event.stopPropagation(); // Prevent the click from propagating to the document
+        });
+    }
+});
+
+
+// close the collapsible section if the user clicks anywhere else
+document.addEventListener("click", (event) => {
+    const aboutSection = document.getElementById("about-section");
+    const collapsible = aboutSection.querySelector(".collapsible");
+    const aboutCollapsible = aboutSection.querySelector(".about-collapsible");
+
+    if (collapsible && aboutCollapsible && aboutCollapsible.style.display === "block") {
+        if (!aboutSection.contains(event.target) && !collapsible.contains(event.target)) {
+            aboutCollapsible.style.display = "none";
+            collapsible.classList.remove("active");
+        }
+    }
+});
+
+
+//for the main content, need to separate the content that shows at default vs when expanded
+function expandItem(element) {
+    let collapsed = element.querySelector('.item-collapsed');
+    let expanded = element.querySelector('.item-expanded');
+
+    // Check if this item is already expanded
+    let isExpanded = expanded.style.display === 'block';
+    
+
+    // Close all other expanded items
+    document.querySelectorAll('.item-role').forEach(item => {
+        item.querySelector('.item-collapsed').style.display = 'block';
+        item.querySelector('.item-expanded').style.display = 'none';
+    });
+
+    // Toggle the clicked item
+    if (!isExpanded) {
+        collapsed.style.display = 'none';
+        expanded.style.display = 'block';
+    }
+
+}
+
+
+function expandItem(element) {
+    // Hide all collapsed items and reset expanded items
+    document.querySelectorAll('.item-role').forEach(item => {
+        const collapsed = item.querySelector('.item-collapsed');
+        const expanded = item.querySelector('.item-expanded');
+        if (collapsed) {
+            collapsed.style.display = 'block'; // Show collapsed items
+        }
+        if (expanded) {
+            expanded.style.display = 'none'; // Hide expanded items
+            item.classList.remove('expanded'); // Remove expanded class
+        }
+    });
+
+    // Expand the clicked item
+    const collapsed = element.querySelector('.item-collapsed');
+    const expanded = element.querySelector('.item-expanded');
+    if (collapsed) {
+        collapsed.style.display = 'none'; // Hide collapsed item for the clicked item
+    }
+    if (expanded) {
+        expanded.style.display = 'block'; // Show expanded item for the clicked item
+        element.classList.add('expanded'); // Add expanded class
+    }
+}
+
+
+
+// Closes the expanded section if the user clicks anywhere else
+document.addEventListener("click", (event) => {
+    const expandedItem = document.querySelector('.item-role.expanded');
+    // Ensure the click is outside of the expanded section
+    if (expandedItem && !expandedItem.contains(event.target)) {
+        expandedItem.classList.remove('expanded');
+    }
+});
+
+// Close button functionality
+document.querySelectorAll('.close-button').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevents triggering the document click listener
+        const expandedItem = this.closest('.item-role');
+        if (expandedItem) {
+            expandedItem.classList.remove('expanded');
+        }
+    });
+});
+
+-----
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/testlogo"
+        href="https://ariellebeltran.github.io/portfolio/landingpage/images/testlogo.png"
+        alt="Arielle Beltran's initials" width="30px" height="30px">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <!-- <a href="#home"><img src="AB_Logo_25PercSmall.png" alt="Arielle Beltran's initial as a logo." width="60px" height="39px" ></a>
+        <div class="dropdown-menu">
+            <button onclick ="myFunction()" class="dropBttn"><span class="hamburger_symb">&#8801;</span></button>
+            <div id="aDropdown" class="dropdown-content">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div> -->
+        <div class="container-nav">
+            <div class="item-nav1">
+                <a href="#home"><img
+                        src="https://ariellebeltran.github.io/portfolio/landingpage/images/testlogo-thick.png"
+                        alt="AB Logo stands for Arielle Beltran" width="30px" height="30px"></a>
+            </div>
+            <div class="item-nav2">
+                <div class="dropdown-menu">
+                    <button onclick="myFunction()" class="dropBttn"><span class="hamburger_symb">&#9776;</span></button>
+                    <div id="aDropdown" class="dropdown-content">
+                        <a href="#about-section">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container-about">
+        <div class="intro">
+            <p id="intro1">Welcome to My Portfolio,<br> <br> My name is...</p>
+            <!-- <h1 id="intro2">Arielle Beltran</h1> -->
+        </div>
+
+        <div class="about-section" id="about-section">
+            <button type="button" class="collapsible">
+                <h1>Arielle Beltran</h1>
+            </button>
+
+            <!-- only have this if you want the collapsible to be open by default -- style="display: block;" -->
+            <div class="about-collapsible">
+                <div class="about-content grid-layout">
+
+                    <div class="item-content itemcontent1">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                        <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/ariellebeltran.jpg"
+                            alt="Arielle Beltran's face" width="auto" height="200vh">
+                    </div>
+                    <div class="item-content itemcontent2">
+                        <p>I am a 5th+ year SIAT student with a concentration in design. My main skills are in user
+                            experience design, web design, and 3D-modeling. I also enjoy learning and improving on my
+                            skills
+                            related to coding and graphic design. </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="viewContainer">
+        <h3 class="changeView">View:<button id="toggleButton" onclick="toggleLayout()">Grid</button></h3>
+        
+    </div>
+
+    <div id="sliderContainer" style="display: none;">
+        <label for="yearSlider">Filter Year:</label>
+        <input type="range" id="yearSlider" min="2022" max="2024" value="2024">
+        <span id="selectedYear">2024</span>
+   
+    </div> -->
+
+    <!-- <button id="toggleButton" onclick="toggleLayout()">Timeline</button> -->
+
+    <!-- <div class="container2 grid-layout" id="timelineContainer">
+        <div class="itemb item1b"  data-year="2024">
+            <h2>2024</h2>
+        </div>
+        <div class="itemb item2b"  data-year="2024">
+            <h2>2024</h2>
+        </div>
+        <div class="itemb item3b"  data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item4b" data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item5b" data-year="2023">
+            <h2>2023</h2>
+        </div>
+        <div class="itemb item6b" data-year="2022">
+            <h2>2022</h2>
+        </div>
+        <div class="itemb item7b" data-year="2022">
+            <h2>2022</h2>
+        </div>
+    </div> -->
+
+    <div class="intro">
+        <h4 id="intro2">Latest Projects</h4>
+        <!-- <h1 id="intro2">Arielle Beltran</h1> -->
+    </div>
+
+    <div class="container-roles grid-layout" id="projects">
+
+        <div class="item-role item1" onclick="expandItem(this)">
+            <div class="item-collapsed">
+                <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/uxui-mockup.png"
+                    alt="A white and red banner of Advisor Link." width="100%" height="75%">
+                <div class="item-title item1">
+                    <h2 id="role-title">UX/UI Designer</h2>
+                </div>
+            </div>
+
+            <div class="item-expanded">
+                <h2 class="item-role inside-header">UX/UI Designer</h2>
+                <div class="item-role inside1">
+                    <a href="ux-ui_designer.html"><img
+                            src="https://ariellebeltran.github.io/portfolio/landingpage/images/advisorlinkbanner.png"
+                            alt="A white and red banner of Advisor Link." width="100%" height="auto"></a>
+                </div>
+
+                <div class="item-role inside2">
+                    <a href="ux-ui_designer.html">
+                        <h3>Landing Pages</h3>
+                    </a>
+                    <br>
+                    <p>My role for this project was to design and create numerous landing pages for the Back On Track
+                        program,
+                        Beedie’s Beedie Success Program, International Students LiveChat, and many other programs for
+                        SFU.
+                    </p>
+                </div>
+                <!-- Close button -->
+                <button class="close-button">&times;</button>
+            </div>
+
+        </div>
+
+        <div class="item-role item2" onclick="expandItem(this)">
+
+            <div class="item-collapsed">
+                <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/graphicdesigner-mockup.png"
+                    alt="A white and red banner of Advisor Link." width="100%" height="75%">
+                <div class="item-title item2">
+                    <h2 id="role-title">Graphic Designer</h2>
+                </div>
+            </div>
+
+            <div class="item-expanded">
+                <h2 class="item-role inside-header">Graphic Designer</h2>
+
+                <div class="item-role inside1">
+                    <a href="graphic_designer.html"><img
+                            src="https://ariellebeltran.github.io/portfolio/landingpage/images/inside-HAO-electric-package1.png"
+                            alt="Mockup of HAO Electric's Business Package." width="100%" height="auto"></a>
+                </div>
+                <div class="item-role inside2">
+                    <a href="graphic_designer.html">
+                        <h3>A Visually Concise Business Placemat</h3>
+                    </a> <br>
+                    <p>My role for this project was to partially research and visualize the trends of a popular music
+                        streaming platform as well as design and develop a website closely mimicking Spotify's existing
+                        For
+                        the Record site.
+                    </p>
+                    <br>
+
+                </div>
+                <!-- Close button -->
+                <button class="close-button">&times;</button>
+            </div>
+        </div>
+
+        <!-- <div class="item-role item3" onclick="expandItem(this)">
+            <h2 class="item-role inside-header">3D Modeller</h2>
+
+            <div class="item-role inside1">
+                <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/siteinspo.png"
+                    alt="A series of images of Spotify's For the Record articles as inspo for my group's website" width="100%" height="auto">
+            </div>
+            <div class="item-role inside2">
+                <h3>LiteSupport</h3> <br>
+                <p>My role for this project was to partially research and visualize the trends of a popular music
+                    streaming platform as well as design and develop a website closely mimicking Spotify's existing For the Record site.
+                </p>
+                <br>
+                <p>View the site <a href="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html" target="_blank">here</a>.</p>
+            </div>
+        </div> -->
+
+        <div class="item-role item4" onclick="expandItem(this)">
+
+            <div class="item-collapsed">
+                <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/uxuiresearch-mockup.png"
+                    alt="A white and red banner of Advisor Link." width="100%" height="100%">
+                <div class="item-title item4">
+                    <h2 id="role-title">UX/UI Researcher</h2>
+                </div>
+            </div>
+
+            <div class="item-expanded">
+                <h2 class="item-role inside-header">UX/UI Researcher</h2>
+
+                <div class="item-role inside1">
+                    <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/blossom-research-hypothesis.png"
+                        alt="Mockup of a new approach of the Blossom app." width="100%" height="auto">
+                </div>
+                <div class="item-role inside2">
+                    <h3>Improving Plant Care For New Plant Owners</h3> <br>
+                    <p>My role for this project was to partially research and visualize the trends of a popular music
+                        streaming platform as well as design and develop a website closely mimicking Spotify's existing
+                        For
+                        the Record site.
+                    </p>
+                    <br>
+                    <p>View the site <a
+                            href="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html"
+                            target="_blank">here</a>.</p>
+                </div>
+                <!-- Close button -->
+                <button class="close-button">&times;</button>
+            </div>
+        </div>
+
+        <div class="item-role item5" onclick="expandItem(this)">
+
+            <div class="item-collapsed">
+                <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/visanalyst-mockup.png"
+                    alt="A white and red banner of Advisor Link." width="100%" height="100%">
+                <div class="item-title item5">
+                    <h2 id="role-title">Visual Analyst</h2>
+                </div>
+            </div>
+
+            <div class="item-expanded">
+
+                <h2 class="item-role inside-header">Visual Analyst</h2>
+
+                <div class="item-role inside1">
+                    <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/siteinspo.png"
+                        alt="A series of images of Spotify's For the Record articles as inspo for my group's website."
+                        width="100%" height="auto">
+                </div>
+                <div class="item-role inside2">
+                    <h3>A Visual Analysis of Spotify Streaming Trends</h3> <br>
+                    <p>My role for this project was to partially research and visualize the trends of a popular music
+                        streaming platform as well as design and develop a website closely mimicking Spotify's existing
+                        For
+                        the Record site.
+                    </p>
+                    <br>
+                    <p>View the site <a
+                            href="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html"
+                            target="_blank">here</a>.</p>
+                </div>
+                <!-- Close button -->
+                <button class="close-button">&times;</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="main.js"></script>
+
+    <footer>
+        <!-- <h4 id="contact">Contact Me through...</h4> -->
+        <div>
+            <a href="mailto:?subject=Arielle Beltran | Portfolio&body=https://ariellebeltran.github.io/portfolio/"
+                target="_blank"><img src="https://ariellebeltran.github.io/portfolio/landingpage/images/email-icon.png"
+                    alt="Email icon" width="2%" height="2%"></a>
+            <img src="https://ariellebeltran.github.io/portfolio/landingpage/images/discord-icon.png" alt="" width="2%"
+                height="4%">
+        </div>
+        <!-- <p>Email: arielle.appled@gmail.com<br>Discord: pomodoroisland</p> -->
+    </footer>
+</body>
+
+</html>
+
+----
+
+css
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+
+/* body */
+body {
+    margin: 15px;
+}
+
+/* other elements */
+
+a,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    /* font-style: normal; */
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+p,
+h3,
+li,
+#sliderContainer {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.numbertext {
+    color: rgb(43, 43, 43);
+    transform: translate(0%, -150%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    font-size: 14px;
+
+}
+
+footer {
+    padding-top: 40px;
+    text-align: center;
+    /* background-color: rgb(92, 92, 92); */
+    color: rgb(0, 0, 0);
+    padding-bottom: 25px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: auto;
+}
+
+/* body =================================================*/
+
+/* nav */
+nav {
+    text-align: right;
+    /* position: sticky; */
+    top: 0;
+    overflow: visible;
+    /* padding: 25px 0px; */
+    background-color: white;
+    font-style: normal;
+    z-index: 1000;
+}
+
+.container-nav {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    /* Distribute items evenly */
+    align-items: center;
+    /* Vertically align items */
+    padding: 10px 20px;
+    /* Optional: Adjust spacing */
+    font-family: Helvetica, Sans-Serif;
+    font-size: 18px;
+    font-optical-sizing: auto;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.item-nav1 {
+    position: sticky;
+
+    display: flex;
+    align-items: center;
+    /* Align logo and text vertically */
+}
+
+/* nav ===========================================================*/
+
+/* .intro{
+    text-align: left;
+} */
+
+/* name-intro */
+#intro1 {
+    /* text-align: center; */
+    padding-bottom: 5px;
+}
+
+#intro2 {
+    padding-top: 30px;
+    color: rgb(121, 121, 121);
+}
+
+.collapsible:hover {
+    color: rgb(100, 100, 100);
+}
+
+/* name-intro ====================================================*/
+
+/* css for the collapsible content for the about section */
+.collapsible {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    /* padding: 18px; */
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    /* margin-top: 20px; */
+    /* margin-bottom:20px; */
+}
+
+.active,
+.collapsible:hover {
+    background-color: #ffffff;
+}
+
+.collapsible:after {
+    /* content: '\02795'; Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    /* float: right;
+    margin-left: 5px; */
+}
+
+/* container of the collapsible */
+.container-about {
+    text-align: center;
+}
+
+/* content inside the collapsible */
+.about-collapsible {
+    padding: 40px;
+    background-color: rgb(233, 233, 233);
+
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: none;
+}
+
+/* .content {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: white;
+    max-height: 0;
+    background-color: #f1f1f1;
+    transition: max-height 0.2s ease-out;
+  } */
+
+/* this is body container */
+/* .container{
+    display: grid;
+    text-align: center;
+} */
+
+.about-content.grid-layout {
+    display: grid;
+    gap: 5px;
+}
+
+.item-content {
+    background-color: rgb(233, 233, 233);
+    padding: 5px;
+    text-align: center;
+    /* min-width: 15vw; */
+    /* height: 60vh; */
+}
+
+.itemcontent1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.itemcontent2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+
+}
+
+.itemcontent2 p {
+    text-align: center;
+    padding: 0px 300px;
+}
+
+
+/* main content here ==========================================================*/
+/* .container-roles.grid-layout {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+}
+
+.item-role {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    height: 60vh;
+} */
+
+/* Default state: only the collapsed part is visible */
+
+.container-title {
+    text-align: center;
+}
+
+.image-heading {
+    margin: 40px 40px 0px;
+    text-align: center;
+}
+
+.image-heading-smaller {
+    margin: 20px 20px 0px;
+    text-align: center;
+}
+
+.image-heading,
+.image-heading-smaller img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+    /* ie8 */
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides1 {
+    display: none;
+}
+
+.dot1 {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transform: translate(0%, -200%);
+    transition: background-color 0.6s ease;
+}
+
+.item-expanded {
+    display: none;
+    /* Ensures expanded content is hidden by default */
+    margin-top: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px 10px;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item-collapsed {
+    padding: none;
+    margin: none;
+    margin-bottom: -50px;
+    background-color: white;
+    /* height: 60vh; */
+}
+
+.item-title {
+    /* position: absolute;
+    bottom: 8px;
+    left: 16px; */
+    font-size: 1.5em;
+    bottom: 8px;
+    transform: translate(0%, -200%);
+    ;
+}
+
+#role-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    /* font-style: normal; */
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    color: white;
+
+}
+
+.expanded .item-expanded {
+    display: contents;
+    /* Show expanded content when parent has .expanded */
+
+}
+
+.expanded .item-collapsed {
+    display: none;
+    /* Hide collapsed content when expanded */
+}
+
+.dropdown-content {
+    display: none;
+    /* Keep dropdown hidden by default */
+}
+
+.show {
+    display: block !important;
+    /* Class to show dropdown when active */
+}
+
+
+.container-roles {
+    margin: 10px 0px;
+    display: grid;
+    gap: 10px;
+
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+}
+
+.item-role {
+    /* background-color: #ffffff; */
+
+    text-align: center;
+    /* height: 60vh; */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+
+.item-role.expanded {
+    background-color: #eeeeee;
+
+    position: absolute;
+    /* padding-top:40px; */
+    padding: 40px 20px 0px 20px;
+    /* top: 0; */
+    left: 0;
+    /* width: 100%; */
+    height: 90vh;
+    /* Full viewport height */
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Adjust columns as needed */
+    gap: 10px;
+}
+
+.item-role .inside1,
+.item-role .inside2 {
+    display: none;
+    /* Hide content by default */
+}
+
+.item-role.expanded .inside1,
+.item-role.expanded .inside2 {
+    display: block;
+    /* Show content when expanded */
+    padding: 0px 20px;
+}
+
+/* had to make more spacing on the right so that its more aligned to the nav  */
+.inside2 {
+    margin-right: 30px;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+
+    @media only screen and (max-width: 1150px) {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    @media only screen and (max-width: 1150px) {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+}
+
+/* .item3 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+} */
+
+.item4 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+
+    @media only screen and (max-width: 1150px) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+}
+
+.item5 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+
+    @media only screen and (max-width: 1150px) {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+}
+
+/* ---- */
+
+.inside-header {
+    grid-column: 1 / span 4;
+    /* if you want to include height, need to ensure the header isnt cut off */
+    height: 50px;
+}
+
+.inside1 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.inside2 {
+    grid-column: 2 / span 4;
+    grid-row-start: 2;
+
+    text-align: left;
+}
+
+/* sections for roles */
+
+.section-project {
+    padding: 0px 500px;
+
+    @media only screen and (max-width: 1820px) {
+        /*For surface pro screen*/
+        padding: 0px 200px;
+    }
+
+    @media only screen and (max-width: 1115px) {
+        padding: 20px;
+    }
+}
+
+.section-project h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 60px;
+}
+
+.section-project p,
+li {
+    text-align: left;
+    padding-top: 20px;
+}
+
+/* navigation dropdown ===================== */
+.dropBttn {
+
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+
+    display: flex;
+    /* Center the icon within the button */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.hamburger_symb {
+    font-size: 2em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+
+}
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.976);
+    /* min-width: 100px; */
+    /* max-width: 100px; */
+    width: 100vw;
+    /* height: 25vh; */
+    /* top: 0;
+    left: 0; */
+    right: 0;
+    z-index: 1;
+    padding: 10px 0px;
+    /* padding-left: 50vw; */
+    margin-top: 15px;
+    /* margin: 100px;
+    margin-left: 0px; */
+    text-align: center;
+    /* margin-right: 500px; */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100vw;
+    height: 5vh;
+    /* Use 100% of the viewport width */
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+
+    font-family: "PT Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* text-transform: uppercase; */
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(7, 7, 7);
+    color: rgb(231, 231, 231);
+
+    font-size: 1.5em;
+
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+.dropdown-content.show {
+    display: block;
+    /* Visible when .show is added */
+}
