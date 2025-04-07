@@ -142,3 +142,4 @@ document.querySelectorAll('.close-button').forEach(button => {
         }
     });
 });
+

@@ -108,8 +108,16 @@ nav {
 
 /* nav ===========================================================*/
 
-/* .intro{
+.intro{
     text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}    
+
+/* .intro p{
+
 } */
 
 /* name-intro */
