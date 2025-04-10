@@ -299,7 +299,7 @@ nav {
     margin: auto;
 }
 
-.mySlides1 {
+.mySlides {
     display: none;
 }
 
@@ -735,7 +735,7 @@ li {
   }
   
   /* Hide the images by default */
-  .mySlides, .mySlides2 {
+  .mySlides1, .mySlides2 {
     display: none;
   }
   
