@@ -726,8 +726,9 @@ li {
 
 /* w3schools below ================================================*/
 
+* {box-sizing:border-box}
 /* Slideshow container */
-.slideshow-container {
+.slideshow-container-w3schools {
     max-width: 1000px;
     position: relative;
     margin: auto;
