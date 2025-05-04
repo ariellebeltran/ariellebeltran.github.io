@@ -476,9 +476,6 @@ nav {
     overflow: hidden;
 }
 
-
-
-
 .item-role.expanded {
     background-color: #eeeeee;
 
@@ -729,6 +726,26 @@ li {
 .dropdown-content.show {
     display: block;
     /* Visible when .show is added */
+}
+
+/* grids used inside pages ======================================= */
+.skill-typenplat{
+    display: grid;
+}
+
+.skill-h{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.skill-s{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.platform{
+    grid-column-start: 3;
+    grid-row-start: 1;
 }
 
 /* w3schools below ================================================*/
