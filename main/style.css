@@ -777,9 +777,10 @@ li {
 
 /* Slideshow container */
 .slideshow-container-w3schools {
-    max-width: 800px;
+    max-width: 700px;
     position: relative;
     margin: auto;
+    text-align: center;
 }
 
 /* Hide the images by default */
@@ -794,6 +795,7 @@ li {
     cursor: pointer;
     position: absolute;
     top: 50%;
+    right: 100%;
     width: auto;
     margin-top: -22px;
     padding: 16px 5px;
@@ -804,6 +806,7 @@ li {
     border-radius: 0 3px 3px 0;
     user-select: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 /* Position the "next button" to the right */
