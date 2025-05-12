@@ -294,6 +294,22 @@ nav {
     text-align: center;
 }
 
+.section-grid{
+    display: grid;
+}
+
+.section-project_overview{
+    margin-top: 60px;
+
+    grid-column-start: 1;
+    grid-row-start: 1
+}
+
+.section-project_detail{
+    grid-column-start:2;
+    grid-row-start: 1;
+}
+
 .image-heading {
     margin: 40px 40px 0px;
     text-align: center;
@@ -630,8 +646,12 @@ nav {
 
 /* sections for roles */
 
-.section-project {
-    padding: 0px 500px;
+.section-project_overview{
+    padding: 0px 50px;
+}
+
+.section-project_detail {
+    padding: 0px 50px;
 
     @media only screen and (max-width: 1820px) {
         /*For surface pro screen*/
@@ -643,7 +663,7 @@ nav {
     }
 }
 
-.section-project h2 {
+.section-project_detail h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -651,7 +671,7 @@ nav {
     padding-top: 60px;
 }
 
-.section-project p,
+.section-project_detail p,
 li {
     text-align: left;
     padding-top: 10px;
