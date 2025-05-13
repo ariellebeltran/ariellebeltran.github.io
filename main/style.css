@@ -9,7 +9,7 @@ body {
 
 
 a:hover {
-    font-style: italic;
+    /* font-style: italic; */
     text-decoration: underline;
     color: black;
 }
@@ -57,7 +57,7 @@ h4 {
     font-size: 14px;
 }
 
-#projectnum {
+#projectnum, #skillslist {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -95,6 +95,7 @@ footer {
     /* background-color: rgb(92, 92, 92); */
     color: rgb(0, 0, 0);
     padding-bottom: 25px;
+    position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
@@ -176,7 +177,7 @@ nav {
 }
 
 #intro2 {
-    padding-top: 30px;
+    padding: 30px 35px 0px;
     color: rgb(121, 121, 121);
 }
 
@@ -294,11 +295,17 @@ nav {
     text-align: center;
 }
 
-.section-grid{
+.section-grid {
     display: grid;
+
 }
 
-.section-project_overview{
+.active-section {
+    font-weight: 700;
+    color: #4d4d4d;
+}
+
+.section-project_overview {
     position: sticky;
     top: 0;
     margin-top: 60px;
@@ -308,16 +315,16 @@ nav {
 
     z-index: 1000;
 
-    color: #4d4d4d;
 }
 
-.section-project_overview p{
+.section-project_overview p {
     top: 200px;
     margin-bottom: 20px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
-.section-project_overview ol{
+.section-project_overview ol {
     top: 240px;
     margin: 0;
     padding: 0;
@@ -326,21 +333,28 @@ nav {
     /* display: grid; */
 }
 
-.section-project_overview p, ol{
+.section-project_overview p,
+ol {
     display: grid;
     position: sticky;
-}
-
-.section-project_overview li{
-    padding-top: 2px !important;
-}
-
-.section-project_overview a{
     color: #717171;
 }
 
-.section-project_detail{
-    grid-column-start:2;
+.section-project_overview li {
+    padding-top: 2px !important;
+}
+
+.section-project_overview a {
+    color: #4d4d4d;
+}
+
+.section-project_overview a:hover {
+    color: #4d4d4d;
+    text-transform: none;
+}
+
+.section-project_detail {
+    grid-column-start: 2;
     grid-row-start: 1;
 }
 
@@ -587,7 +601,7 @@ nav {
 }
 
 .item-role .inside-header {
-    padding-top: 50px;
+    /* padding-top: 50px; */
 
     @media only screen and (max-width: 1150px) {
         padding-top: 40px;
@@ -680,21 +694,42 @@ nav {
 
 /* sections for roles */
 
-.section-project_overview{
+.section-project_overview {
     padding: 0px 50px;
+
+    @media only screen and (max-width: 400px) {
+        /* padding: 0px 25px; */
+        display: none;
+    }
 }
 
 .section-project_detail {
-    padding: 0px 50px;
 
-    @media only screen and (max-width: 1820px) {
-        /*For surface pro screen*/
-        padding: 0px 150px;
+    padding: 0px 400px 0px 200px;
+
+    @media only screen and (max-width: 1400px) {
+        padding: 0px 200px;
     }
 
-    @media only screen and (max-width: 1115px) {
-        padding: 20px;
+    @media only screen and (max-width: 1100px) {
+        padding: 0px 100px 0px 50px;
     }
+
+    @media only screen and (max-width: 850px) {
+        padding: 0px 50px;
+    }
+
+    /* @media only screen and (max-width: 600px) {
+
+    }
+
+    @media only screen and (max-width: 500px) {
+ 
+    }*/
+
+    /* @media only screen and (max-width: 400px) {
+        padding: 0px 25px;
+    }  */
 }
 
 .section-project_detail h2 {
@@ -779,7 +814,7 @@ li {
     margin-bottom: 5px;
     text-align: left !important;
 
-    font-family: "PT Mono", serif;
+    font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
     /* text-transform: uppercase; */

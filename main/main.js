@@ -143,3 +143,34 @@ document.querySelectorAll('.close-button').forEach(button => {
     });
 });
 
+//for highlighting the selected section in a page (career pages)
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("ol li a");
+    const sections = document.querySelectorAll("div.section-project_overview ol li a");
+
+    function highlightSection(id) {
+        links.forEach(link => {
+            link.classList.remove("active-section"); // Updated class name
+            if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active-section"); // Updated class name
+            }
+        });
+    }
+
+    document.addEventListener("scroll", function () {
+        sections.forEach(section => {
+            const sectionElement = document.querySelector(section.getAttribute("href"));
+            const rect = sectionElement.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight / 8) {
+                highlightSection(sectionElement.id);
+            }
+        });
+    });
+
+    links.forEach(link => {
+        link.addEventListener("click", function () {
+            const id = this.getAttribute("href").substring(1);
+            highlightSection(id);
+        });
+    });
+});
