@@ -119,7 +119,7 @@ nav {
     /* padding: 25px 0px; */
     background-color: white;
     font-style: normal;
-    z-index: 1000;
+    z-index: 2000;
 
 }
 
@@ -130,7 +130,7 @@ nav {
     /* Distribute items evenly */
     /* align-items: center; */
     /* Vertically align items */
-    padding: 25px 35px;
+    padding: 25px 35px 0px;
     /* Optional: Adjust spacing */
     font-family: Helvetica, Sans-Serif;
     font-size: 18px;
@@ -689,7 +689,7 @@ nav {
 
     @media only screen and (max-width: 1820px) {
         /*For surface pro screen*/
-        padding: 0px 200px;
+        padding: 0px 150px;
     }
 
     @media only screen and (max-width: 1115px) {
