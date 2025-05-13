@@ -3,6 +3,9 @@
 /* body */
 body {
     margin: 0px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* other elements */
@@ -57,7 +60,8 @@ h4 {
     font-size: 14px;
 }
 
-#projectnum, #skillslist {
+#projectnum,
+#skillslist {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -90,17 +94,23 @@ figcaption {
 }
 
 footer {
-    padding-top: 40px;
+    padding: 40px 0 25px;
+
     text-align: center;
-    /* background-color: rgb(92, 92, 92); */
+
     color: rgb(0, 0, 0);
-    padding-bottom: 25px;
-    position: fixed;
+    /* background-color: white; */
+
     width: 100%;
+    position: relative;
     left: 0;
     bottom: 0;
-    margin-top: auto;
+
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh; */
 }
+
 
 footer img {
     @media only screen and (max-width: 500px) {
@@ -171,8 +181,9 @@ nav {
     padding-bottom: 5px;
 }
 
-#myname {
-
+#myname,
+button.collapsible.active {
+    background-color:rgba(255, 255, 255, 0) !important;
     text-align: center;
 }
 
@@ -223,8 +234,8 @@ nav {
 /* content inside the collapsible */
 .about-collapsible {
     padding: 40px;
-    background-color: rgb(233, 233, 233);
-
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.150);
     color: rgb(0, 0, 0);
     overflow: hidden;
     display: none;
@@ -245,15 +256,15 @@ nav {
     text-align: center;
 } */
 
-.about-content.grid-layout {
+/* .about-content.grid-layout {
     display: grid;
     gap: 5px;
-}
+} */
 
 .item-content {
-    background-color: rgb(233, 233, 233);
+    /* background-color: rgb(233, 233, 233); */
     padding: 5px;
-    text-align: center;
+    /* text-align: center; */
     /* min-width: 15vw; */
     /* height: 60vh; */
 }
@@ -264,16 +275,20 @@ nav {
 }
 
 .itemcontent2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-row-start: 1;
 
 }
 
 .itemcontent2 p {
-    text-align: center;
-    padding: 0px 300px;
+    text-align: left;
+    /* padding: 0px 300px; */
 }
 
+.about-content h2,
+.about-content p{
+    text-align: left !important;
+}
 
 /* main content here ==========================================================*/
 /* .container-roles.grid-layout {
@@ -565,16 +580,17 @@ ol {
     background-color: #eeeeee;
 
     position: absolute;
-    /* padding-top:40px; */
     padding: 40px 20px 0px 20px;
-    /* top: 0; */
     left: 0;
-    /* width: 100%; */
-    /* height: 90vh; */
+
+    @media only screen and (min-width: 1400px) {
+        height: 63%;
+    }
+
     /* Full viewport height */
     /* height: 100%; */
     z-index: 10;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.308);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.200);
     overflow: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -605,7 +621,10 @@ ol {
 
     @media only screen and (max-width: 1150px) {
         padding-top: 40px;
+    }
 
+    @media only screen and (max-width: 1100px) {
+        padding-top: 20px;
     }
 }
 

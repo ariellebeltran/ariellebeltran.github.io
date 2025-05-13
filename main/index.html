@@ -56,23 +56,64 @@
 
             <!-- only have this if you want the collapsible to be open by default -- style="display: block;" -->
             <div class="about-collapsible">
-                <div class="about-content grid-layout">
+                <!-- <div class="about-content grid-layout">
+                </div> -->
+                <div class="slideshow-container-w3schools">
 
-                    <div class="item-content itemcontent1">
-                        <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
-                            alt="Arielle Beltran's face" width="auto" height="200vh">
-                        <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
-                            alt="Arielle Beltran's face" width="auto" height="200vh">
-                        <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
-                            alt="Arielle Beltran's face" width="auto" height="200vh">
-                    </div>
-                    <div class="item-content itemcontent2">
-                        <p>I am a 5th+ year SIAT student with a concentration in design. My main skills are in user
-                            experience design, web design, and 3D-modeling. I also enjoy learning and improving on my
-                            skills
-                            related to coding and graphic design. </p>
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides1">
+                        <div class="item-content itemcontent1">
+                            <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
+                                alt="Arielle Beltran's face" width="auto" height="200vh">
+                            <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
+                                alt="Arielle Beltran's face" width="auto" height="200vh">
+                            <img src="https://ariellebeltran.github.io/portfolio/main/images/ariellebeltran.jpg"
+                                alt="Arielle Beltran's face" width="auto" height="200vh">
+                        </div>
+                        <div class="item-content itemcontent2">
+                            <p>I am a 5th+ year SIAT student with a concentration in design. My main skills are in
+                                user experience design, web design, and 3D-modeling. I also enjoy learning and improving
+                                on my skills related to coding and graphic design. </p>
+                        </div>
 
                     </div>
+
+                    <div class="mySlides1">
+                        <div class="about-content">
+                            <h2>Design Ethos</h2> <br>
+                            <p>
+                                Design is a product of time. <br> <br>At every phase of a design process, one thing is
+                                clear, we are the bridge that connects the user to a product. <br>
+                            </p>
+
+                                <blockquote style="text-align: left;">
+                                    The <b>Past</b> provides invaluable lessons from trial and error, shaping our
+                                    approach
+                                    with experience.<br>
+                                    The <b>Present</b> allows us to create solutions that are feasible, functional, and
+                                    tailored to the user's current needs <br>
+                                    The <b>Future</b> encourages forward thinking, reminding us to design with
+                                    scalability
+                                    in mind.
+                                </blockquote>
+
+                            <p>Good design is never static—it grows, adapts, and evolves with time.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="mySlides1">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img src="https://ariellebeltran.github.io/portfolio/main/images/HAOElectric_colours.png"
+                            style="width:100%">
+                        <figcaption>Colour palette found from browser inspect tool</figcaption>
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+
+                    <!-- <figcaption>Medium to high fidelity of rough concepts.</figcaption> -->
                 </div>
             </div>
         </div>
@@ -336,6 +377,7 @@
     </div> -->
 
     <script src="main.js"></script>
+    <script src="slideshow-about.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed(".auto-type", {
