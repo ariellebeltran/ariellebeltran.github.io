@@ -74,10 +74,27 @@ function plusSlides(n, no) {
 function showSlides(n, no) {
   let i;
   let x = document.getElementsByClassName(slideId[no]); //x stores all slide elements belonging to that slideshow
-  if (n > x.length) {slideIndex[no] = 1} //if n is greater than amount of slides, it loops back to start
-  if (n < 1) {slideIndex[no] = x.length} //if n is less than 1 it goes to the last slide
+  if (n > x.length) {slideIndex[no] = 1;} //if n is greater than amount of slides, it loops back to start
+  if (n < 1) {slideIndex[no] = x.length;} //if n is less than 1 it goes to the last slide
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
   }
   x[slideIndex[no]-1].style.display = "block";  
 }
+
+// Adjusts arrow placement dynamically based on image heights
+window.addEventListener('load', function() {
+    slideId.forEach((id) => {
+        const slides = document.getElementsByClassName(id);
+
+        for (let slide of slides) {
+            const img = slide.querySelector("img"); // Select the image inside the slide
+            if (img) {
+                const width = img.clientWidth;
+                document.querySelector('.prev').style.left = `${-width * 0.5}px`; // Position prev arrow
+                document.querySelector('.next').style.right = `${-width * 0.5}px`; // Position next arrow
+            }
+        }
+    });
+});
+
