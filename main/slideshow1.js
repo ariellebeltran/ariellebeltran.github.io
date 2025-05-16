@@ -83,18 +83,18 @@ function showSlides(n, no) {
 }
 
 // Adjusts arrow placement dynamically based on image heights
-window.addEventListener('load', function() {
-    slideId.forEach((id) => {
-        const slides = document.getElementsByClassName(id);
+// window.addEventListener('load', function() {
+//     slideId.forEach((id) => {
+//         const slides = document.getElementsByClassName(id);
 
-        for (let slide of slides) {
-            const img = slide.querySelector("img"); // Select the image inside the slide
-            if (img) {
-                const width = img.clientWidth;
-                document.querySelector('.prev').style.left = `${-width * 0.5}px`; // Position prev arrow
-                document.querySelector('.next').style.right = `${-width * 0.5}px`; // Position next arrow
-            }
-        }
-    });
-});
+//         for (let slide of slides) {
+//             const img = slide.querySelector("img"); // Select the image inside the slide
+//             if (img) {
+//                 const width = img.clientWidth;
+//                 document.querySelector('.prev').style.left = `${-width * 0.5}px`; // Position prev arrow
+//                 document.querySelector('.next').style.right = `${-width * 0.5}px`; // Position next arrow
+//             }
+//         }
+//     });
+// });
 
