@@ -1,6 +1,8 @@
 Feedback:
 1. First critique: Not user friendly enough, for e.g. at the landing page when showing the list of projects, the user doesn't know to click on to the image or title to go inside the page.
 2. Second critique: Site looks too plain, looks really general? Like they wanted to see what the portfolios of for e.g. graphic designers look like and how they are style. I think they also wanted to see some information that stands out to companys related to that career.
+3. Unclear of how to go back to previous page when inside a project page. (May 23, 2025)
+4. View Project button not that visible (May 23, 2025)
 
 Observations:
 1. Clicking contact isn't clear, doesn't seem to show anything.
