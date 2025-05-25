@@ -698,18 +698,19 @@ ol {
 
 .inside-header {
     grid-column: 1 / span 4;
+    /* grid-row:1; */
     /* if you want to include height, need to ensure the header isnt cut off */
     height: 50px;
 }
 
 .inside1 {
-    grid-column-start: 1;
-    grid-row-start: 2;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .inside2 {
     grid-column: 2 / span 4;
-    grid-row-start: 2;
+    grid-row: 2;
 
     text-align: left;
 }
@@ -894,11 +895,34 @@ li {
     text-align: center;
 }
 
+.slideshow-container-w3schools-proj {
+    /* max-width: 700px; */
+    
+    grid-column: span 2; /* Forces it to take two columns */
+    display: grid;
+ 
+
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
 /* Hide the images by default */
 .mySlides1,
-.mySlides2 {
+.mySlides2, 
+.mySlides-gd {
     display: none;
 }
+
+/* .mySlides-gd{
+
+    display: grid !important;
+} */
+
+.mySlides-gd[style*="display: block"] {
+    display: grid !important;
+}
+
 
 /* Next & previous buttons */
 .prev,
