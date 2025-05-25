@@ -920,7 +920,10 @@ li {
 } */
 
 .mySlides-gd[style*="display: block"] {
-    display: grid !important;
+
+    @media only screen and (min-width: 1300px) {
+         display: grid !important;
+    }
 }
 
 
