@@ -74,17 +74,30 @@ h4 {
 /* view project button styling ================= */
 
 .viewbttn {
-    display: flex; /* Enables flexible positioning */
-    align-items: center; /* Centers items vertically */
-    justify-content: space-between; /* Positions text on left, arrow on right */
-    width: fit-content; /* Adapts to content */
-    padding: 10px 20px;
+    display: flex;
+    /* Enables flexible positioning */
+    align-items: center;
+    /* Centers items vertically */
+    justify-content: space-between;
+    /* Positions text on left, arrow on right */
+    width: fit-content;
+    /* Adapts to content */
+
     /* background-color:#bbb;
     border: none; */
     border: 1px solid #717171;
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+
+    /* padding: 10px 20px; */
+    white-space: nowrap;
+    padding: 1vh 20px;
+
+    /* width: 50%; */
+    /* Button takes up 50% of its container */
+    max-width: 100%;
+    /* Prevent button from getting too wide on larger screens */
 }
 
 .viewbttn:hover {
@@ -105,7 +118,8 @@ h4 {
 /* added arrow styling, but it might not be used */
 .btn-arrow {
     font-size: 1.5em;
-    margin-left: 1vw; /* Adds space between text and arrow */
+    margin-left: 1vw;
+    /* Adds space between text and arrow */
     color: black;
     transition: color 0.3s ease-in-out;
 }
@@ -636,7 +650,7 @@ ol {
     }
 
     /* Full viewport height */
-    height: 60vh;
+    height: 80vh;
     z-index: 10;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.200);
     overflow: auto;
@@ -763,7 +777,7 @@ ol {
 /* sections for roles */
 
 .section-project_overview {
-    padding: 0px 50px;
+    padding: 0px 35px;
 
     @media only screen and (max-width: 400px) {
         /* padding: 0px 25px; */
