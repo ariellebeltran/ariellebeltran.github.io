@@ -463,10 +463,21 @@ ol {
 }
 
 .side-scroll-container {
-    width: 100%;
-    height: 400px;
-    overflow: auto;
+    max-width: 100%;
+    width: 1000px; /* Default width */
+    height: auto;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
+
+.side-scroll-container img {
+    width: auto; /* Keeps original width */
+    height: 100%; /* Ensures it scales proportionally */
+    flex-shrink: 0; /* Prevents compression */
+}
+
 
 .slideshow-container {
     max-width: 1000px;
