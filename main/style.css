@@ -770,6 +770,29 @@ ol {
     }
 }
 
+/* other projects ================================================================== */
+
+.other-projects{
+    margin: 10px 40px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.other-projects img{
+    filter: grayscale(100%);
+}
+
+.itema{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.itemb{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
 /* ---- */
 
 .inside-header {
@@ -791,7 +814,7 @@ ol {
     text-align: left;
 }
 
-/* sections for roles */
+/* sections for roles ============================================================ */
 
 .section-project_overview {
     padding: 0px 35px;
@@ -845,7 +868,7 @@ li {
     padding-top: 10px;
 }
 
-/* navigation dropdown ===================== */
+/* navigation dropdown =============================================================================== */
 .dropBttn {
 
     background-color: white;
