@@ -776,11 +776,12 @@ ol {
     margin: 10px 40px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .other-projects img{
     filter: grayscale(100%);
+    opacity: 0.8;
 }
 
 .itema{
@@ -790,6 +791,21 @@ ol {
 
 .itemb{
     grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.itemc{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.itemd{
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+
+.iteme{
+    grid-column-start: 4;
     grid-row-start: 1;
 }
 
