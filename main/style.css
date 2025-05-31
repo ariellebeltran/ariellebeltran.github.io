@@ -1144,9 +1144,11 @@ li {
     justify-content: center;
     gap: 20px;
     margin-top: 25px;
-    margin-bottom: -25px; /* Push legend closer */
+    margin-bottom: -25px;
+    /* Push legend closer */
     position: relative;
-    bottom: -20px; /* Move it UP */
+    bottom: -20px;
+    /* Move it UP */
 }
 
 
@@ -1161,32 +1163,31 @@ li {
     background-color: blue;
 }
 
-#projects-title{
-   color: blue;
-}
-
 #hackathons {
     background-color: blueviolet;
-}
-
-#hackathons-title {
-    color: blueviolet;
 }
 
 #co-op {
     background-color: red;
 }
 
+/* #hackathons-title {
+    color: blueviolet;
+}
+#projects-title{
+   color: blue;
+}
 #co-op-title{
     color: red;
-}
+} */
 
 .legend-box {
     width: 10px;
     height: 10px;
     display: inline-block;
     margin-right: 8px;
-    border-radius: 1px; /* Optional: rounded corners */
+    border-radius: 1px;
+    /* Optional: rounded corners */
 }
 
 
@@ -1217,17 +1218,18 @@ li {
     font-family: "Sofia Sans Extra Condensed", sans-serif;
     text-transform: uppercase;
     font-weight: 500;
+    margin-top: 10px;
 }
 
 .year h4 {
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .year p {
+    margin-top: 10px;
     font-size: 14px;
-    /* font-weight: bold; */
     margin-bottom: 10px;
     font-family: "Space Mono", monospace;
 }
@@ -1240,7 +1242,7 @@ li {
     display: none;
     position: relative;
     text-align: center;
-    margin-top: 10px;
+
 }
 
 .interval:hover .events {
@@ -1260,4 +1262,10 @@ li {
     width: 350px;
 
     z-index: 1000;
+}
+
+#exp-type {
+    
+    font-weight: 300;
+    font-size: 12px;
 }
