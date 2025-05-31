@@ -1,6 +1,7 @@
 Feedback:
 1. First critique: Not user friendly enough, for e.g. at the landing page when showing the list of projects, the user doesn't know to click on to the image or title to go inside the page.
-2. Second critique: Site looks too plain, looks really general? Like they wanted to see what the portfolios of for e.g. graphic designers look like and how they are style. I think they also wanted to see some information that stands out to companys related to that career.
+2. Second critique: Site looks too plain, looks really general? Like they wanted to see what the portfolios of for e.g. graphic designers look like and how they are style.
+I think they also wanted to see some information that stands out to companys related to that career.
 3. Unclear of how to go back to previous page when inside a project page. (May 23, 2025)
 4. View Project button not that visible (May 23, 2025)
 
@@ -8,3 +9,7 @@ Observations:
 1. Clicking contact isn't clear, doesn't seem to show anything.
 2. Website lacking more personality... (May 11-17?)
 3. Need to show other experiences without overloading people, especially if it's just to show snippet of what I've done over the years...(May 25-30?)
+4. I initially added 3 colours to the timeline for the time intervals, however I noticed that the colours looked really off compared to the rest of the portfolio, 
+it looked even worse when I added photos to bring some visual clarity to each time interval. That really conflicted with the coloured headers as the photos were coloured too. 
+It wouldn't be good to make the b&w so I decided to make the headers black and then added a subheader to clarify if it was academic experience or co-op, so it looks less 
+overwhelming and more sublte, I hope that the images allow users more breathing room when reading the little snippets.(May 31)
