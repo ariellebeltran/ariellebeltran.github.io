@@ -349,7 +349,7 @@ button.collapsible.active {
 
 .about-content h2,
 .about-content p {
-    text-align: left !important;
+    text-align: center !important;
 }
 
 /* main content here ==========================================================*/
