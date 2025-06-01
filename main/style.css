@@ -299,7 +299,7 @@ button.collapsible.active {
     background-color: rgb(243, 243, 243);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.150);
     color: rgb(0, 0, 0);
-    overflow: hidden;
+    /* overflow: hidden; */
     display: none;
 }
 
@@ -1157,6 +1157,7 @@ li {
     align-items: center;
     font-size: 16px;
     font-weight: bold;
+    color: #797979;
 }
 
 #projectsl {
