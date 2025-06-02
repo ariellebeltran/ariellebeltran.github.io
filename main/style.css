@@ -74,14 +74,15 @@ h4 {
 /* view project button styling ================= */
 
 .viewbttn {
-    display: flex;
+    /* display: flex; */
     /* Enables flexible positioning */
     align-items: center;
     /* Centers items vertically */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* Positions text on left, arrow on right */
-    width: fit-content;
+    /* width: fit-content; */
     /* Adapts to content */
+    width: 100%;
 
     /* background-color:#bbb;
     border: none; */
@@ -514,6 +515,7 @@ ol {
 }
 
 .close-button {
+    display: none;
     position: absolute;
     top: 10px;
     right: 30px;
@@ -684,13 +686,14 @@ ol {
     transition: all 0.3s ease;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
 }
 
 .item-role.expanded {
     background-color: #eeeeee;
     padding: 20px;
     display: block;
-    width: 100%;
+   
     /* Ensures content stays within the container */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -703,11 +706,18 @@ ol {
     }
 }
 
+.item-role.dimmed {
+    opacity: 1; /* Reduces brightness */
+    filter: brightness(80%); /* Optional: Reduces contrast */
+    transition: opacity 0.3s ease-in-out;
+}
+
+
 .item-role.inside1 img {
     max-width: 50%; /* Makes sure the image never exceeds its container */
     height: auto; /* Maintains the aspect ratio */
     display: block; /* Removes extra space under the image */
-    object-fit: contain; /* Adjusts the image to fit within constraints */
+    object-fit: cover; /* Adjusts the image to fit within constraints */
 }
 
 
@@ -721,7 +731,8 @@ ol {
 .item-role.expanded .inside2 {
     display: block;
     /* Show content when expanded */
-    /* padding: 25px 20px 50px; */
+    /* padding: 0 !important; */
+    font-size: 14px;
 }
 
 .item-role .inside-header {
@@ -746,7 +757,7 @@ ol {
 
 /* had to make more spacing on the right so that its more aligned to the nav  */
 .inside2 {
-    margin-right: 30px;
+    /* margin-right: 30px; */
 
     @media only screen and (max-width: 1150px) {
 
