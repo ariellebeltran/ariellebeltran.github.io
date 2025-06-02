@@ -824,6 +824,18 @@ ol {
     opacity: 0.6;
 }
 
+.other-projects img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Make sure only the hovered item is affected */
+.other-projects:hover img:not(:hover) {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+
 .itema {
     grid-column-start: 1;
     grid-row-start: 1;
@@ -832,21 +844,25 @@ ol {
 .itemb {
     grid-column-start: 2;
     grid-row-start: 1;
+    cursor: not-allowed;
 }
 
 .itemc {
     grid-column-start: 3;
     grid-row-start: 1;
+    cursor: not-allowed;
 }
 
 .itemd {
     grid-column-start: 4;
     grid-row-start: 1;
+    cursor: not-allowed;
 }
 
 .iteme {
     grid-column-start: 5;
     grid-row-start: 1;
+    cursor: not-allowed;
 }
 
 /* ---- */
