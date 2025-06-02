@@ -94,17 +94,18 @@ function expandItem(element) {
     // Check if this item is already expanded
     let isExpanded = expanded.style.display === 'block';
     
-
-    // Close all other expanded items
-    document.querySelectorAll('.item-role').forEach(item => {
-        item.querySelector('.item-collapsed').style.display = 'block';
-        item.querySelector('.item-expanded').style.display = 'none';
+    // Hide all other expanded items
+    document.querySelectorAll('.item-role .item-expanded').forEach(item => {
+        item.style.display = 'none';
     });
 
-    // Toggle the clicked item
+    // Toggle the clicked item's content inside itself
     if (!isExpanded) {
         collapsed.style.display = 'none';
         expanded.style.display = 'block';
+    } else {
+        collapsed.style.display = 'block';
+        expanded.style.display = 'none';
     }
 
 }
@@ -142,6 +143,17 @@ document.querySelectorAll('.close-button').forEach(button => {
         }
     });
 });
+
+// Close button functionality different method
+document.addEventListener("DOMContentLoaded", function() {
+    const closeButton = document.querySelector(".close-about");
+    const aboutCollapsible = document.querySelector(".about-collapsible");
+
+    closeButton.addEventListener("click", function() {
+        aboutCollapsible.style.display = "none";
+    });
+});
+
 
 //for highlighting the selected section in a page (career pages)
 document.addEventListener("DOMContentLoaded", function () {
