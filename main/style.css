@@ -495,7 +495,7 @@ ol {
     display: none;
 }
 
-.dot1 {
+/* .dot1 {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -505,7 +505,7 @@ ol {
     display: inline-block;
     transform: translate(0%, -200%);
     transition: background-color 0.6s ease;
-}
+} */
 
 .item-expanded {
     display: none;
@@ -1213,7 +1213,7 @@ span[class^="dot"]:hover {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
+    margin: 5px 2px;
     background-color: #e6e6e6;
     border-radius: 50%;
     display: inline-block;
