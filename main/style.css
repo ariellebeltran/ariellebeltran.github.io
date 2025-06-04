@@ -142,6 +142,17 @@ figcaption {
     text-align: center;
 }
 
+figcaption#caption {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 13px;
+    text-align: left;
+}
+
 .numbertext {
     color: rgb(43, 43, 43);
     transform: translate(0%, -150%);
@@ -467,6 +478,10 @@ img#gif {
     border-radius: 20px;
 }
 
+img#gif-col4 {
+    border-radius: 15px;
+}
+
 .side-scroll-container {
     max-width: 100%;
     width: 1000px;
@@ -687,7 +702,7 @@ img#gif {
     /* background-color: #ffffff; */
     text-align: center;
     /* height: 60vh; */
-    transition:all 0.3s ease-out;
+    transition: all 0.3s ease-out;
     overflow: hidden;
     cursor: pointer;
     position: relative;
@@ -821,27 +836,35 @@ img#gif {
     }
 }
 
-.item-role.item1.expanded h2, .item-role.item1.expanded h3, .item-role.item1.expanded p,
- .item-role.item2.expanded h2, .item-role.item2.expanded h3, .item-role.item2.expanded p,
- .item-role.item4.expanded h2,  .item-role.item4.expanded h3,  .item-role.item4.expanded p, 
- .item-role.item5.expanded h2, .item-role.item5.expanded h3, .item-role.item5.expanded p{
+.item-role.item1.expanded h2,
+.item-role.item1.expanded h3,
+.item-role.item1.expanded p,
+.item-role.item2.expanded h2,
+.item-role.item2.expanded h3,
+.item-role.item2.expanded p,
+.item-role.item4.expanded h2,
+.item-role.item4.expanded h3,
+.item-role.item4.expanded p,
+.item-role.item5.expanded h2,
+.item-role.item5.expanded h3,
+.item-role.item5.expanded p {
     color: white !important;
 }
 
 
-.item-role.item1.expanded{
+.item-role.item1.expanded {
     background-color: #C0434A;
 }
 
-.item-role.item2.expanded{
+.item-role.item2.expanded {
     background-color: #286887;
 }
 
-.item-role.item4.expanded{
+.item-role.item4.expanded {
     background-color: #3E4F3C;
 }
 
-.item-role.item5.expanded{
+.item-role.item5.expanded {
     background-color: #BA53E8;
 }
 
@@ -922,6 +945,65 @@ img#gif {
     text-align: left;
 }
 
+/* Grids inside project pages ==================================================== */
+
+.gif-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.gif-grid-1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers the image and caption */
+    text-align: center;
+    /* Ensures text is centered */
+}
+
+.gif-grid-2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers the image and caption */
+    text-align: center;
+    /* Ensures text is centered */
+}
+
+.gif-grid-3 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers the image and caption */
+    text-align: center;
+    /* Ensures text is centered */
+}
+
+.gif-grid-4 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers the image and caption */
+    text-align: center;
+    /* Ensures text is centered */
+}
+
 /* sections for roles ============================================================ */
 
 .section-project_overview {
@@ -933,11 +1015,12 @@ img#gif {
     }
 }
 
-.inpage, .inpage a{
+.inpage,
+.inpage a {
     color: #797979 !important;
 }
 
-#inpage-link{
+#inpage-link {
     padding-top: 0 !important;
 }
 
@@ -1148,7 +1231,7 @@ li {
 .next {
     cursor: pointer;
     position: absolute;
-    top:0;
+    top: 0;
     right: 55%;
     width: auto;
     padding: 275px 200px;
@@ -1213,7 +1296,11 @@ span[class^="dot"]:hover {
     background-color: #717171;
 } */
 
-.dot0, .dot1, .dot2, .dot3, .dot4 {
+.dot0,
+.dot1,
+.dot2,
+.dot3,
+.dot4 {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -1225,7 +1312,11 @@ span[class^="dot"]:hover {
 }
 
 .active,
-.dot0:hover, .dot1:hover, .dot2:hover, .dot3:hover, .dot4:hover {
+.dot0:hover,
+.dot1:hover,
+.dot2:hover,
+.dot3:hover,
+.dot4:hover {
     background-color: #717171;
 }
 
