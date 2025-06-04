@@ -463,6 +463,10 @@ ol {
     /* ie8 */
 }
 
+img#gif {
+    border-radius: 20px;
+}
+
 .side-scroll-container {
     max-width: 100%;
     width: 1000px;

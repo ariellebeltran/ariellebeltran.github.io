@@ -188,11 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //play or pause gif
-function toggleGIF() {
-    let img = document.getElementById("gif");
-    if (img.src.includes(".gif")) {
-        img.src = "https://ariellebeltran.github.io/portfolio/main/images/fb-home-static.jpg"; // Replace with a static version
-    } else {
-        img.src = "https://ariellebeltran.github.io/portfolio/main/images/fb-home-gif.gif";
-    }
-}
+document.querySelectorAll('.gif-toggle').forEach(img => {
+    img.addEventListener('click', () => {
+        img.src = img.src === img.dataset.gif ? img.dataset.static : img.dataset.gif;
+    });
+});
