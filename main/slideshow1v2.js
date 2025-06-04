@@ -1,50 +1,75 @@
-// thank you w3schools
-// let slideIndex = 1;
-// showSlides(slideIndex);
+// Declare slideIndex globally so it's accessible across functions
+let slideIndex = [1, 1]; // One index per slideshow
+let slideId = ["mySlides1", "mySlides2"];
+let autoSlideInterval = 3000; // Change every 3 seconds
 
-// Next/previous controls
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+// Ensure script runs after page loads
+document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < slideId.length; i++) {
+        showSlides(slideIndex[i], i); // Initialize slideshows
+        autoSlides(i); // Start auto-sliding
+    }
 
-// Thumbnail image controls
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+    // Add event listeners for navigation buttons only if they exist
+    for (let i = 0; i < slideId.length; i++) {
+        let prevBtn = document.querySelector(`.prev${i}`);
+        let nextBtn = document.querySelector(`.next${i}`);
 
-//adding dots for reference ================ vvvvvv
-// function showSlides(n) {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   let dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }
+        if (prevBtn) {
+            prevBtn.addEventListener("click", function () {
+                plusSlides(-1, i);
+            });
+        }
 
-let slideIndex = [1,1];
-let slideId = ["mySlides1", "mySlides2"]
-showSlides(1, 0);
-showSlides(1, 1);
+        if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+                plusSlides(1, i);
+            });
+        }
+    }
+});
 
 function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
+    if (slideIndex[no] !== undefined) {
+        slideIndex[no] += n;
+        showSlides(slideIndex[no], no);
+    }
 }
 
 function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
+    let slides = document.getElementsByClassName(slideId[no]);
+    let dots = document.getElementsByClassName(`dot${no}`);
+
+    // Ensure elements exist before modifying them
+    if (!slides || slides.length === 0 || !dots || dots.length === 0) return;
+
+    if (n > slides.length) { slideIndex[no] = 1; }
+    if (n < 1) { slideIndex[no] = slides.length; }
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Reset active dot
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Display the active slide and highlight the corresponding dot
+    if (slides[slideIndex[no] - 1]) {
+        slides[slideIndex[no] - 1].style.display = "block";
+    }
+    if (dots[slideIndex[no] - 1]) {
+        dots[slideIndex[no] - 1].className += " active";
+    }
 }
+
+function autoSlides(no) {
+    setInterval(() => {
+        plusSlides(1, no);
+    }, autoSlideInterval);
+}
+
+
+
