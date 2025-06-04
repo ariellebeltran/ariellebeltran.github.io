@@ -795,6 +795,8 @@ img#gif-col4 {
     grid-column-start: 1;
     grid-row-start: 1;
 
+    align-content: center;
+
     @media only screen and (max-width: 1150px) {
         grid-column-start: 1;
         grid-row-start: 1;
@@ -804,6 +806,8 @@ img#gif-col4 {
 .item2 {
     grid-column-start: 2;
     grid-row-start: 1;
+
+    align-content: center;
 
     @media only screen and (max-width: 1150px) {
         grid-column-start: 1;
@@ -820,6 +824,8 @@ img#gif-col4 {
     grid-column-start: 3;
     grid-row-start: 1;
 
+    align-content: center;
+
     @media only screen and (max-width: 1150px) {
         grid-column-start: 1;
         grid-row-start: 3;
@@ -829,6 +835,8 @@ img#gif-col4 {
 .item5 {
     grid-column-start: 4;
     grid-row-start: 1;
+
+    align-content: center;
 
     @media only screen and (max-width: 1150px) {
         grid-column-start: 1;
