@@ -989,6 +989,7 @@ img#gif-col4 {
 
 /*img modal */
 .modal {
+    z-index: 1000;
     display: none;
     position: fixed;
     left: 0;
