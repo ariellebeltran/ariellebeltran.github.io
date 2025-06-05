@@ -93,7 +93,7 @@ function expandItem(element) {
 
     // Check if this item is already expanded
     let isExpanded = expanded.style.display === 'block';
-    
+
     // Hide all other expanded items
     document.querySelectorAll('.item-role .item-expanded').forEach(item => {
         item.style.display = 'none';
@@ -117,10 +117,10 @@ function expandItem(element) {
     // const collapsedItem = document.querySelector('.item-role.collapsed');
 
     if (expandedItem) {
-        expandedItem.classList.remove('expanded');  
+        expandedItem.classList.remove('expanded');
     }
     element.classList.add('expanded');
-   
+
 }
 
 
@@ -145,11 +145,11 @@ document.querySelectorAll('.close-button').forEach(button => {
 });
 
 // Close button functionality different method
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.querySelector(".close-about");
     const aboutCollapsible = document.querySelector(".about-collapsible");
 
-    closeButton.addEventListener("click", function() {
+    closeButton.addEventListener("click", function () {
         aboutCollapsible.style.display = "none";
     });
 });
@@ -191,5 +191,66 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelectorAll('.gif-toggle').forEach(img => {
     img.addEventListener('click', () => {
         img.src = img.src === img.dataset.gif ? img.dataset.static : img.dataset.gif;
+    });
+});
+
+//show or hide button
+
+//commented these out, found out i can combine the 2 functions together
+// function toggleFunction1() {
+//     var x = document.getElementById("moreProj");
+//     var btn = document.getElementById("moreProj-bttn"); 
+//     if (window.getComputedStyle(x).display === "none") {
+//         x.style.display = "grid";
+//         btn.innerText = "(Hide)";
+
+//     } else {
+//         x.style.display = "none";
+//         btn.innerText = "(Show)"; 
+
+//     }
+// }
+
+// function toggleFunction2() {
+//     var x = document.getElementById("assetProj");
+//     var btn = document.getElementById("assetProj-bttn");
+
+//     if (window.getComputedStyle(x).display === "none") {
+//         x.style.display = "grid";
+//         btn.innerText = "(Hide)"; 
+//     } else {
+//         x.style.display = "none";
+//         btn.innerText = "(Show)"; 
+
+//     }
+// }
+
+function toggleFunction(elementId, buttonId) {
+    var x = document.getElementById(elementId);
+    var btn = document.getElementById(buttonId);
+
+    if (window.getComputedStyle(x).display === "none") {
+        x.style.display = "grid";
+        btn.innerText = "(Hide)";
+    } else {
+        x.style.display = "none";
+        btn.innerText = "(Show)";
+    }
+}
+
+document.addEventListener("click", function(event) {
+    var elements = [
+        { id: "moreProj", buttonId: "moreProj-bttn" },
+        { id: "assetProj", buttonId: "assetProj-bttn" }
+    ];
+
+    elements.forEach(({ id, buttonId }) => {
+        var x = document.getElementById(id);
+        var btn = document.getElementById(buttonId);
+
+        if (window.getComputedStyle(x).display === "grid" && event.target !== x && event.target !== btn) {
+            x.style.display = "none";
+            btn.innerText = "(Show)";
+        }
     });
 });

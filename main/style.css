@@ -262,7 +262,7 @@ button.collapsible.active {
     text-align: center;
 }
 
-#intro2 {
+#intro2, #moreProj-bttn, #assetProj-bttn {
     padding: 30px 35px 0px;
     color: rgb(121, 121, 121);
 }
@@ -879,6 +879,18 @@ img#gif-col4 {
 
 /* other projects ================================================================== */
 
+#moreProj-bttn, #assetProj-bttn{
+    border: none;
+    padding: 0;
+    background-color:#ffffff00;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#moreProj{
+    display: none;
+}
+
 .other-projects {
     margin: 10px 40px;
     display: grid;
@@ -887,7 +899,7 @@ img#gif-col4 {
 }
 
 .other-projects img {
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     opacity: 0.6;
 }
 
@@ -936,6 +948,10 @@ img#gif-col4 {
 /* ---- */
 
 /* other projects ================================================================== */
+
+#assetProj{
+    display: none;
+}
 
 .asset-projects {
     margin: 10px 40px;
