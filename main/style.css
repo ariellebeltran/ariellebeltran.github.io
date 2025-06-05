@@ -968,6 +968,7 @@ img#gif-col4 {
 .item-asset2 {
     grid-column-start: 2;
     grid-row-start: 1;
+    cursor: not-allowed;
 }
 
 /*img modal */

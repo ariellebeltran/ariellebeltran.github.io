@@ -6,7 +6,7 @@ let slideId = ["mySlides1"];
 let baseUrl = "https://ariellebeltran.github.io/portfolio/main/images/";
 let imageSets = {
     0: ["431-neonatal-assets1.png", "431-neonatal-assets2.png", "431-neonatal-assets3.png"],
-    1: ["image2-inside1.jpg", "image2-inside2.jpg", "image2-inside3.jpg"]
+    1: [""]
 };
 let currentSet = [];
 let modalSlideIndex = 0;
