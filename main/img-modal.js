@@ -6,14 +6,14 @@ let imageSets = {
 };
 
 let currentSet = [];
-let slideIndex = 0;
+let modalSlideIndex = 0; // ✅ Updates the first slideshow
 let modal = document.getElementById("myModal");
 let modalImg = document.getElementById("modalImage");
 let captionText = document.getElementById("caption");
 
 function openModal(index) {
     currentSet = imageSets[index]; // Load correct image set
-    slideIndex = 1; // Start at first image (index 1 for consistency)
+    modalSlideIndex = 0; // Start at first image (index 1 for consistency)
     modal.style.display = "block";
     showSlides(slideIndex);
 }
@@ -22,13 +22,17 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-function showSlides(n) {
-    if (n > currentSet.length) slideIndex = 1; // Loop back to first image
-    if (n < 1) slideIndex = currentSet.length; // Go to last image
-    modalImg.src = baseUrl + currentSet[slideIndex - 1]; // Set image source
-    captionText.innerHTML = `Image ${slideIndex} of ${currentSet.length}`;
+function showSlides(n, no) {
+    function showSlides(n) {
+        if (n >= currentSet.length) modalSlideIndex = 0; // Loop back to first image
+        if (n < 0) modalSlideIndex = currentSet.length - 1; // Go to last image
+
+        modalImg.src = baseUrl + currentSet[modalSlideIndex]; // Use modal images instead
+        captionText.innerHTML = `Image ${modalSlideIndex + 1} of ${currentSet.length}`;
+    }
 }
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+    modalSlideIndex += n;
+    showSlides(modalSlideIndex);
 }

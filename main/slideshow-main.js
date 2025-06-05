@@ -1,4 +1,6 @@
-let slideIndex = [1, 1];
+slideIndex[0] += 1; // ✅ Updates first slideshow correctly
+slideIndex[1] += 1; // ✅ Updates second slideshow correctly
+
 let slideId = ["mySlides1", "mySlides-gd"];
 
 showSlides(1, 0);
