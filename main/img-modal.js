@@ -15,22 +15,23 @@ function openModal(index) {
     currentSet = imageSets[index]; // Load correct image set
     modalSlideIndex = 0; // Start at first image (index 1 for consistency)
     modal.style.display = "block";
-    showSlides(slideIndex);
+    showSlides(modalSlideIndex);
 }
 
 function closeModal() {
     modal.style.display = "none";
 }
 
-function showSlides(n, no) {
-    function showSlides(n) {
-        if (n >= currentSet.length) modalSlideIndex = 0; // Loop back to first image
-        if (n < 0) modalSlideIndex = currentSet.length - 1; // Go to last image
+function showSlides(n) {
+    if (n >= currentSet.length) modalSlideIndex = 0; // Loop back to first image
+    if (n < 0) modalSlideIndex = currentSet.length - 1; // Go to last image
 
-        modalImg.src = baseUrl + currentSet[modalSlideIndex]; // Use modal images instead
-        captionText.innerHTML = `Image ${modalSlideIndex + 1} of ${currentSet.length}`;
-    }
+    modalImg.src = baseUrl + currentSet[modalSlideIndex]; // ✅ Set image correctly
+    captionText.innerHTML = `Image ${modalSlideIndex + 1} of ${currentSet.length}`;
+
+    console.log("Current modal index:", modalSlideIndex); // ✅ Debugging check
 }
+
 
 function plusSlides(n) {
     modalSlideIndex += n;
