@@ -711,30 +711,34 @@
 
     </div>
 
-    
+
     <div>
         <h4 id="intro2">Assets</h4>
     </div>
 
-    <div class="asset-projects grid-layout">
-
+    <!-- Images triggering different sets -->
+    <div class="asset-projects">
         <div class="item-role item-asset1">
-            <img src="https://ariellebeltran.github.io/portfolio/main/images/litesupport.png"
-                alt="Flashlight for the elderly." width="100%" height="auto">
+            <img src="431-logo.png" alt="Project 1" onclick="openModal(0)">
         </div>
-
         <div class="item-role item-asset2">
-            <img src="https://ariellebeltran.github.io/portfolio/main/images/litesupport.png"
-                alt="Flashlight for the elderly." width="100%" height="auto">
+            <img src="image2.jpg" alt="Project 2" onclick="openModal(1)">
         </div>
-
     </div>
 
-
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <button onclick="plusSlides(-1)">❮ Prev</button>
+        <button onclick="plusSlides(1)">Next ❯</button>
+    </div>
 
     <script src="main.js"></script>
     <script src="slideshow-main.js"></script>
     <script src="timeline.js"></script>
+    <script src="img-modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed(".auto-type", {

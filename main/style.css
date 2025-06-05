@@ -959,12 +959,41 @@ img#gif-col4 {
     opacity: 0.6;
 }
 
-
 .item-asset1 {
     grid-column-start: 1;
     grid-row-start: 1;
-    cursor: not-allowed;
 }
+
+.item-asset2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+/*img modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
 
 
 /* ---- */
