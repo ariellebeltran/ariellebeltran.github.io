@@ -934,6 +934,41 @@ img#gif-col4 {
 
 /* ---- */
 
+/* other projects ================================================================== */
+
+.asset-projects {
+    margin: 10px 40px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.asset-projects img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.asset-projects img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Make sure only the hovered item is affected */
+.asset-projects:hover img:not(:hover) {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+
+.item-asset1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    cursor: not-allowed;
+}
+
+
+/* ---- */
+
 .inside-header {
     grid-column: 1 / span 4;
     /* grid-row:1; */
