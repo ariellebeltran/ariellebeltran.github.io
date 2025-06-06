@@ -887,7 +887,7 @@ img#gif-col4 {
     cursor: pointer;
 }
 
-button#moreProj-bttn:hover, button#assetProj-bttn:hover{
+button#moreProj-bttn:hover, button#assetProj-bttn:hover, button#appendix-bttn:hover{
     font-style: italic;
 }
 
