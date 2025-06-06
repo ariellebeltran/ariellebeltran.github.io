@@ -887,6 +887,10 @@ img#gif-col4 {
     cursor: pointer;
 }
 
+button#moreProj-bttn:hover, button#assetProj-bttn:hover{
+    font-style: italic;
+}
+
 #moreProj{
     display: none;
 }
