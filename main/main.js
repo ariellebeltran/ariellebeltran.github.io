@@ -241,7 +241,8 @@ function toggleFunction(elementId, buttonId) {
 document.addEventListener("click", function(event) {
     var elements = [
         { id: "moreProj", buttonId: "moreProj-bttn" },
-        { id: "assetProj", buttonId: "assetProj-bttn" }
+        { id: "assetProj", buttonId: "assetProj-bttn" },
+        { id: "appendixProj", buttonId: "appendix-bttn"}
     ];
 
     elements.forEach(({ id, buttonId }) => {

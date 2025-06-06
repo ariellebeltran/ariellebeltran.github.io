@@ -879,7 +879,7 @@ img#gif-col4 {
 
 /* other projects ================================================================== */
 
-#moreProj-bttn, #assetProj-bttn{
+#moreProj-bttn, #assetProj-bttn, #appendix-bttn{
     border: none;
     padding: 0;
     background-color:#ffffff00;
@@ -1032,7 +1032,11 @@ button#moreProj-bttn:hover, button#assetProj-bttn:hover{
     cursor: pointer;
 }
 
+/* appendix stuff ========== */
 
+#appendixProj{
+    display: none;
+}
 
 /* ---- */
 
