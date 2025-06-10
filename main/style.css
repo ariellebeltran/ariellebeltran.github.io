@@ -928,7 +928,6 @@ button#moreProj-bttn:hover, button#assetProj-bttn:hover, button#appendix-bttn:ho
 .itemb {
     grid-column-start: 2;
     grid-row-start: 1;
-    cursor: not-allowed;
 }
 
 .itemc {
