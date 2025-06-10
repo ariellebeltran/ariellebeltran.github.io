@@ -461,7 +461,6 @@ ol {
     }
 }
 
-
 .image-heading-smaller {
     margin: 20px 20px 0px;
     text-align: center;
@@ -482,6 +481,56 @@ img#gif {
 img#gif-col4 {
     border-radius: 15px;
 }
+
+/* crop images ----------------------------------------------------------- */
+.crop-container {
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 40px auto;
+}
+
+.crop-container img {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+
+/* side to side images ------------------------------------------------- */
+
+/* just imgs not in slideshows */
+/* #side-to-side-imgs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#side-to-side-imgs img {
+  width: 45%;
+} */
+
+/* within slideshows, figcaptions included*/
+@media only screen and (min-width: 1300px) {
+  #side-to-side-imgs[style*="display: block"] .s2s-img-row{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #side-to-side-imgs[style*="display: block"] .s2s-img-row img {
+    width: 45%;
+  }
+
+  #side-to-side-imgs figcaption {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+
+/* ---------------------------------------- */
 
 .side-scroll-container {
     max-width: 100%;
@@ -1337,7 +1386,6 @@ li {
         display: grid !important;
     }
 } */
-
 
 /* Next & previous buttons */
 .prev,

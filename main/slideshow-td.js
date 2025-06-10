@@ -1,7 +1,7 @@
 // Declare slideIndex globally so it's accessible across functions
 let slideIndex = [1, 1, 1, 1, 1]; // One index per slideshow
 let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"];
-let autoSlideInterval = 3000; // Change every 3 seconds
+let autoSlideInterval = 8000; // Change every 3 seconds
 
 // Ensure script runs after page loads
 document.addEventListener("DOMContentLoaded", function () {
