@@ -953,7 +953,7 @@ button#moreProj-bttn:hover, button#assetProj-bttn:hover, button#appendix-bttn:ho
 
 .other-projects img {
     /* filter: grayscale(100%); */
-    opacity: 0.6;
+    /* opacity: 0.6; */
 }
 
 .other-projects img:hover {
@@ -997,6 +997,46 @@ button#moreProj-bttn:hover, button#assetProj-bttn:hover, button#appendix-bttn:ho
     cursor: not-allowed;
 }
 
+/* hover text */
+
+.image-wrapper {
+  position: relative;
+  display: block;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-wrapper a,
+.image-wrapper {
+  position: relative;
+  display: block;
+}
+
+.image-wrapper a .hover-text,
+.image-wrapper .hover-text {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  /* border-radius: 4px; */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .hover-text,
+.image-wrapper a:hover .hover-text {
+  opacity: 1;
+}
+
 /* ---- */
 
 /* other projects ================================================================== */
@@ -1014,7 +1054,7 @@ button#moreProj-bttn:hover, button#assetProj-bttn:hover, button#appendix-bttn:ho
 
 .asset-projects img {
     filter: grayscale(100%);
-    opacity: 0.6;
+    /* opacity: 0.6; */
 }
 
 .asset-projects img:hover {
