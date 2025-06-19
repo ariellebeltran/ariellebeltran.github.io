@@ -255,3 +255,21 @@ document.addEventListener("click", function(event) {
         }
     });
 });
+
+// function copyEmail() {
+//     const emailField = document.getElementById("emailToCopy");
+//     emailField.select();
+//     emailField.setSelectionRange(0, 99999);
+//     navigator.clipboard.writeText(emailField.value).then(() => {
+//         alert("Email copied: " + emailField.value);
+//     });
+// }
+
+function copyEmail(inputId) {
+    const emailField = document.getElementById(inputId);
+    emailField.select();
+    emailField.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(emailField.value).then(() => {
+        alert("Email copied: " + emailField.value);
+    });
+}
