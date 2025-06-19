@@ -238,11 +238,11 @@ function toggleFunction(elementId, buttonId) {
     }
 }
 
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
     var elements = [
         { id: "moreProj", buttonId: "moreProj-bttn" },
         { id: "assetProj", buttonId: "assetProj-bttn" },
-        { id: "appendixProj", buttonId: "appendix-bttn"}
+        { id: "appendixProj", buttonId: "appendix-bttn" }
     ];
 
     elements.forEach(({ id, buttonId }) => {
@@ -265,11 +265,14 @@ document.addEventListener("click", function(event) {
 //     });
 // }
 
-function copyEmail(inputId) {
-    const emailField = document.getElementById(inputId);
-    emailField.select();
-    emailField.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(emailField.value).then(() => {
-        alert("Email copied: " + emailField.value);
-    });
-}
+
+document.addEventListener("DOMContentLoaded", () => {
+    function copyEmail(inputId) {
+        const emailField = document.getElementById(inputId);
+        emailField.select();
+        emailField.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(emailField.value).then(() => {
+            alert("Email copied: " + emailField.value);
+        });
+    }
+});
