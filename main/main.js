@@ -267,7 +267,7 @@ document.addEventListener("click", function (event) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    function copyEmail(inputId) {
+    window.copyEmail = function(inputId) {
         const emailField = document.getElementById(inputId);
         emailField.select();
         emailField.setSelectionRange(0, 99999);
