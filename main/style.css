@@ -1825,7 +1825,7 @@ span[class^="dot"]:hover {
 .about-me h2, .about-me p {
     margin: 20px 400px;
 
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-width: 1500px) {
         margin: 20px 200px;
     }
 
