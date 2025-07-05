@@ -1802,3 +1802,7 @@ span[class^="dot"]:hover {
 .proj-headline h1{
     margin-top: 50px;
 }
+
+.about-me{
+    text-align: center;
+}
