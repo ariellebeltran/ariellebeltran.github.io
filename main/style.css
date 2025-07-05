@@ -245,22 +245,6 @@ nav {
 
 /* nav ===========================================================*/
 
-.preview-intro {
-    text-align: center;
-    margin: 200px 0px 0px;
-}
-
-/* .preview-intro h1{
-    margin-bottom: 10px;
-} */
-
-.preview-intro h2 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    text-transform: none;
-    margin-bottom: 10px;
-}
-
 .auto-type {
     font-family: "Space Mono", monospace;
 }
@@ -281,15 +265,6 @@ nav {
 #intro1 {
     /* text-align: center; */
     padding-bottom: 5px;
-}
-
-.preview-timeline {
-    margin: 0px 0px 150px;
-}
-
-.quick-buttons {
-    text-align: center;
-    margin:0px;
 }
 
 #myname,
@@ -1797,6 +1772,40 @@ span[class^="dot"]:hover {
     font-size: 12px;
 }
 
+/* preview page ======================================*/
+.preview-intro, .preview-quote{
+    text-align: center;
+}
+
+.preview-intro {
+    margin: 200px 0px 0px;
+}
+
+/* .preview-intro h1{
+    margin-bottom: 10px;
+} */
+
+.preview-intro h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.preview-timeline {
+    margin: 0px 0px 50px;
+}
+
+.preview-quote{
+    color: #797979;
+    margin-top:50px;
+}
+
+.quick-buttons {
+    text-align: center;
+    margin:0px;
+}
+
 /* latest projects page ============================= */
 
 .proj-headline{
@@ -1815,4 +1824,22 @@ span[class^="dot"]:hover {
 
 .about-me h2, .about-me p {
     margin: 20px 400px;
+
+    @media only screen and (max-width: 1400px) {
+        margin: 20px 200px;
+    }
+
+    @media only screen and (max-width: 850px) {
+        margin: 20px 75px;
+    }
+
+    @media only screen and (max-width: 600px) {
+    }
+
+    @media only screen and (max-width: 500px) {
+        margin: 20px 0px;
+    }
+
+    @media only screen and (max-width: 400px) {
+    }
 }
