@@ -131,14 +131,14 @@ h4 {
 
 /* preview ------ */
 
-.previewbttn{
+.quickbttn{
     border: none;
     background-color: white;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
-.previewbttn:hover{
+.quickbttn:hover{
     /* border: 1px solid #000000;
     border-radius: 5px;
     padding: 20px; */
@@ -183,20 +183,11 @@ figcaption#caption {
 
 footer {
     padding: 40px 0 25px;
-
     text-align: center;
-
     color: rgb(0, 0, 0);
-    /* background-color: white; */
 
     width: 100%;
-    position: relative;
-    left: 0;
-    bottom: 0;
-
-    /* display: flex;
-    flex-direction: column;
-    min-height: 100vh; */
+    margin-top: auto;
 }
 
 footer a {
@@ -256,7 +247,7 @@ nav {
 
 .preview-intro {
     text-align: center;
-    margin: 150px 0px 50px;
+    margin: 200px 0px 0px;
 }
 
 /* .preview-intro h1{
@@ -293,12 +284,12 @@ nav {
 }
 
 .preview-timeline {
-    margin: 50px 0px 50px;
+    margin: 0px 0px 150px;
 }
 
-.preview-buttons {
+.quick-buttons {
     text-align: center;
-    margin: 50px 0px 150px;
+    margin:0px;
 }
 
 #myname,
@@ -1054,7 +1045,7 @@ button#appendix-bttn:hover {
     margin: 10px 40px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .other-projects img {
@@ -1098,26 +1089,26 @@ button#appendix-bttn:hover {
 }
 
 .iteme {
-    grid-column-start: 5;
-    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-start: 2;
     cursor: not-allowed;
 }
 
 .itemf {
-    grid-column-start: 6;
-    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 2;
     cursor: not-allowed;
 }
 
 .itemg {
-    grid-column-start: 7;
-    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-start: 2;
     cursor: not-allowed;
 }
 
 .itemh {
-    grid-column-start: 8;
-    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-start: 2;
 }
 
 /* hover text */
@@ -1170,7 +1161,7 @@ button#appendix-bttn:hover {
 }
 
 .asset-projects {
-    margin: 10px 40px;
+    margin: 10px 40px 50px;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -1193,12 +1184,12 @@ button#appendix-bttn:hover {
 }
 
 .item-asset1 {
-    grid-column-start: 1;
+    grid-column-start: 4;
     grid-row-start: 1;
 }
 
 .item-asset2 {
-    grid-column-start: 2;
+    grid-column-start: 5;
     grid-row-start: 1;
     cursor: not-allowed;
 }
@@ -1808,6 +1799,6 @@ span[class^="dot"]:hover {
 
 /* latest projects page ============================= */
 
-.latest-proj-headline h1{
+.proj-headline h1{
     margin-top: 50px;
 }
