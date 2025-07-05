@@ -8,6 +8,17 @@ I think they also wanted to see some information that stands out to companys rel
 6. Received feedback of my vector drawing of my face. There is more mixed to negative reactions about having it be my about picture.... so I will be moving it to my project works instead.
 I am thinking maybe I should have another section dedicated to showing my vector drawings.(June 2)
 
+Joyce Feedback 07/04/25:
+General:
+Index - 
+latest projects, the title makes u think they are categories, rather than just the role, not clear
+The timeline is cool, should be in the forefront
+keep links universal
+short sentence to show you who you are, 
+js typewriter kinda showy off, 
+headlines - make them pop up more
+make the show/hide look nicer
+
 Observations:
 1. Clicking contact isn't clear, doesn't seem to show anything.
 2. Website lacking more personality... (May 11-17?)
@@ -25,3 +36,4 @@ of the collapsed version. Initially they were all greyed out, but I think having
 8. So trying to practice some SEO principles (June 8)
 9. Figured I should add some text hovers for the Other Projects, so it's more clear for the user what exactly they're hovering on. Then thought, wouldn't it be cool to have the background 
 colour fade from top to bottom to match how the main 4 projects are shown?(June 9) 
+
