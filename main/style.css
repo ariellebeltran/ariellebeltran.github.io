@@ -129,6 +129,22 @@ h4 {
     color: white;
 }
 
+/* preview ------ */
+
+.previewbttn{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.previewbttn:hover{
+    /* border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px; */
+    text-decoration: underline;
+}
+
 /* ================================================= */
 
 figcaption,
@@ -238,6 +254,26 @@ nav {
 
 /* nav ===========================================================*/
 
+.preview-intro {
+    text-align: center;
+    margin: 150px 0px 50px;
+}
+
+/* .preview-intro h1{
+    margin-bottom: 10px;
+} */
+
+.preview-intro h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.auto-type {
+    font-family: "Space Mono", monospace;
+}
+
 .intro {
     text-align: left;
     display: flex;
@@ -254,6 +290,15 @@ nav {
 #intro1 {
     /* text-align: center; */
     padding-bottom: 5px;
+}
+
+.preview-timeline {
+    margin: 50px 0px 50px;
+}
+
+.preview-buttons {
+    text-align: center;
+    margin: 50px 0px 150px;
 }
 
 #myname,
