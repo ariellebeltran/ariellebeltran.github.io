@@ -1799,10 +1799,20 @@ span[class^="dot"]:hover {
 
 /* latest projects page ============================= */
 
-.proj-headline h1{
+.proj-headline{
     margin-top: 50px;
+    text-align: center;
+}
+
+.about-me h2, .about-me p{
+    text-align: left !important;
 }
 
 .about-me{
     text-align: center;
+    margin: 0px 30px;
+}
+
+.about-me h2, .about-me p {
+    margin: 20px 400px;
 }
