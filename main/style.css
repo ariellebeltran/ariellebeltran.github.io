@@ -61,14 +61,16 @@ h4 {
 }
 
 #projectnum,
-#skillslist {
+#skillslist,
+span#skillslist {
     font-family: "Space Mono", monospace;
     font-weight: 300;
     font-style: normal;
     margin: 0;
     padding-top: 20px;
-    font-size: 15px;
-    color: #4d4d4d;
+    /* font-size: 15px; */
+    /* color: #4d4d4d; */
+    color: white;
 }
 
 /* view project button styling ================= */
@@ -131,14 +133,14 @@ h4 {
 
 /* preview ------ */
 
-.quickbttn{
+.quickbttn {
     border: none;
     background-color: white;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
-.quickbttn:hover{
+.quickbttn:hover {
     /* border: 1px solid #000000;
     border-radius: 5px;
     padding: 20px; */
@@ -665,6 +667,8 @@ img#gif-col4 {
     @media only screen and (max-width: 1150px) {
 
         background-color: rgb(233, 233, 233);
+        /* border: #333 2px solid;*/
+        /* border-radius: 5px;  */
         display: flex;
     }
 }
@@ -673,7 +677,9 @@ img#gif-col4 {
 .item-title5 {
     @media only screen and (max-width: 1150px) {
 
-        background-color: rgb(161, 161, 161);
+        background-color: rgb(190, 190, 190);
+        /* border: #717171 2px solid;*/
+        /* border-radius: 5px;  */
         display: flex;
     }
 }
@@ -822,14 +828,14 @@ img#gif-col4 {
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    
+
 }
 
 .item-role.expanded {
     background-color: #eeeeee;
     padding: 20px;
     display: block;
-    
+
     /* Ensures content stays within the container */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -1021,6 +1027,10 @@ button#appendix-bttn:hover {
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .other-projects img {
@@ -1055,35 +1065,64 @@ button#appendix-bttn:hover {
     grid-column-start: 3;
     grid-row-start: 1;
 
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
 }
 
 .itemd {
     grid-column-start: 4;
     grid-row-start: 1;
     cursor: not-allowed;
+
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
 }
 
 .iteme {
     grid-column-start: 1;
     grid-row-start: 2;
     cursor: not-allowed;
+
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
 }
 
 .itemf {
     grid-column-start: 2;
     grid-row-start: 2;
     cursor: not-allowed;
+
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
 }
 
 .itemg {
     grid-column-start: 3;
     grid-row-start: 2;
     cursor: not-allowed;
+
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 1;
+        grid-row-start: 4;
+    }
 }
 
 .itemh {
     grid-column-start: 4;
     grid-row-start: 2;
+
+    @media only screen and (max-width: 500px) {
+        grid-column-start: 2;
+        grid-row-start: 4;
+    }
 }
 
 /* hover text */
@@ -1119,7 +1158,7 @@ button#appendix-bttn:hover {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
 }
 
 .image-wrapper:hover .hover-text,
@@ -1140,6 +1179,10 @@ button#appendix-bttn:hover {
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .asset-projects img {
@@ -1773,7 +1816,8 @@ span[class^="dot"]:hover {
 }
 
 /* preview page ======================================*/
-.preview-intro, .preview-quote{
+.preview-intro,
+.preview-quote {
     text-align: center;
 }
 
@@ -1796,33 +1840,35 @@ span[class^="dot"]:hover {
     margin: 0px 0px 50px;
 }
 
-.preview-quote{
+.preview-quote {
     color: #797979;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 .quick-buttons {
     text-align: center;
-    margin:0px;
+    margin: 0px;
 }
 
 /* latest projects page ============================= */
 
-.proj-headline{
+.proj-headline {
     margin-top: 50px;
     text-align: center;
 }
 
-.about-me h2, .about-me p{
+.about-me h2,
+.about-me p {
     text-align: left !important;
 }
 
-.about-me{
+.about-me {
     text-align: center;
     margin: 0px 30px;
 }
 
-.about-me h2, .about-me p {
+.about-me h2,
+.about-me p {
     margin: 20px 400px;
 
     @media only screen and (max-width: 1500px) {
@@ -1833,13 +1879,11 @@ span[class^="dot"]:hover {
         margin: 20px 75px;
     }
 
-    @media only screen and (max-width: 600px) {
-    }
+    @media only screen and (max-width: 600px) {}
 
     @media only screen and (max-width: 500px) {
         margin: 20px 0px;
     }
 
-    @media only screen and (max-width: 400px) {
-    }
+    @media only screen and (max-width: 400px) {}
 }

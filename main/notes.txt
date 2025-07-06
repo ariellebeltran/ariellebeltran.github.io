@@ -1,0 +1,21 @@
+.item-title1,
+.item-title4 {
+    @media only screen and (max-width: 1150px) {
+
+        background-color: rgb(233, 233, 233);
+        /* border: #333 2px solid;*/
+        /* border-radius: 5px;  */
+        display: flex;
+    }
+}
+
+.item-title2,
+.item-title5 {
+    @media only screen and (max-width: 1150px) {
+
+        background-color: rgb(190, 190, 190);
+        /* border: #717171 2px solid;*/
+        /* border-radius: 5px;  */
+        display: flex;
+    }
+}
