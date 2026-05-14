@@ -1747,9 +1747,34 @@ span[class^="dot"]:hover {
     display: flex;
     align-items: center;
     position: relative;
-    width: 80%;
+    width: 55%;
     border-top: 2.5px solid #333;
     padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    right: -1%;
+    top: 0%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid #333;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 .year {
